@@ -13,7 +13,6 @@
     justify-content: space-between;
     align-items: flex-start;
     text-align: left;
-    margin-left: 0.5rem;
 }
 
 .name_logo_container {
@@ -26,12 +25,14 @@
     font-weight: 500;
     color: #344054;
     line-height: 1.75rem;
+    margin-left: 0.5rem;
 }
 
 .hero_container {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
+    padding-left: 0.5rem;
 }
 
 .first_line {
