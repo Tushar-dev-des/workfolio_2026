@@ -90,3 +90,7 @@
     color: #000000;
     gap: 0.25rem;
 }
+
+.subtitle_container a {
+    text-decoration: none;
+}

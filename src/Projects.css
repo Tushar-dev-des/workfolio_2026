@@ -69,8 +69,8 @@
 
 .p2 .project_content .thumbnail {
     /* border: 1px solid #00000010; */
-    border: 1px solid #f9e7b9;
-    background: url("./assets/cleartrip_assured.png");
+    border: 1px solid #f3bdd1;
+    background: url("./assets/ai_agent.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -78,8 +78,8 @@
 
 .p3 .project_content .thumbnail {
     /* border: 1px solid #00000010; */
-    border: 1px solid #f3bdd1;
-    background: url("./assets/ai_agent.png");
+    border: 1px solid #f9e7b9;
+    background: url("./assets/cleartrip_assured.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -92,4 +92,13 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+}
+
+.atlas_ai {
+
+    background: linear-gradient(86deg, #b9c8ff 0%, #597ff7 60%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 600;
 }
