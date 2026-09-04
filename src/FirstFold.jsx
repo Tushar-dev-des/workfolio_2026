@@ -24,7 +24,7 @@ function FirstFold() {
                         </div>
 
                         <div className="title">
-                            <h1>thrives in 0→1, B2B/Enterprise/SAAS environments</h1>
+                            <h1>thrives in 0→1, B2B/Enterprise/SaaS environments</h1>
                         </div>
                     </div>
                     <div className="subtitle_container">

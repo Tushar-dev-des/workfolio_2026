@@ -89,7 +89,7 @@ const ProjectPage = () => {
                                             <h1>churn <span style={{ fontSize: '2.75rem' }}>🚫</span></h1>
                                             <h1>growth <span style={{ fontSize: '2.75rem' }}>✅</span></h1>
                                         </div>
-                                        <p>users finally felt in control</p>
+                                        <p>grabbed attention of big names</p>
                                     </div>
 
                                 </div>

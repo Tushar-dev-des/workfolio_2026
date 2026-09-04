@@ -37,6 +37,7 @@
     font-weight: 500;
     line-height: 3rem;
     color: #344054;
+    letter-spacing: -0.6px;
 }
 
 .container_project_intro .project_intro p {
@@ -89,6 +90,7 @@
     font-weight: 600;
     line-height: 1;
     color: #3E67CE;
+    letter-spacing: -0.6px;
 }
 
 .metric_card p {
@@ -97,6 +99,7 @@
     font-weight: 300;
     color: #667085;
     width: 100%;
+    letter-spacing: 0.2px;
 }
 
 .container_metrics {
