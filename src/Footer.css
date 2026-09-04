@@ -2,10 +2,12 @@
     height: 144px;
     width: 100%;
     padding: 2.5rem;
-    background: url('./assets/footer_bg.svg');
+    background-color: #fff;
+    /* background: url('./assets/footer_bg.svg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center; */
+    border-top: 1px solid #11111010;
 }
 
 .footer {
@@ -19,11 +21,20 @@
 }
 
 .outro h1 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
     font-weight: 300;
-    line-height: 3rem;
-    color: #ffffff;
+    color: #344054;
     text-decoration: none;
+}
+
+.outro p {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-weight: 300;
+    color: #98a2b3;
+    letter-spacing: 0.2px;
+    width: 100%;
 }
 
 
@@ -35,10 +46,9 @@
 
 .socials a {
     text-decoration: none;
-    color: #ffffff;
+    color: #344054;
     font-size: 1rem;
-    line-height: 1.5rem;
+    line-height: 1.25rem;
     font-weight: 300;
     letter-spacing: 0.2px;
-    cursor: pointer;
 }

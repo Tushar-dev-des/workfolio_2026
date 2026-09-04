@@ -8,6 +8,7 @@ const Footer = () => {
             <div className='footer'>
                 <div className='outro'>
                     <h1>Like the vibe? Lets connect. </h1>
+                    <p>Always open to work that makes a difference!</p>
                 </div>
                 <div className="socials">
                     <a rel="noopener noreferrer">tusharxmahajan@gmail.com</a>
