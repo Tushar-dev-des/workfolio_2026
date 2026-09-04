@@ -124,7 +124,7 @@ const ProjectOne = () => {
                     <div className="container_apologies">
                         <div className="apologies">
                             <p style={{ fontWeight: "600", color: "#344054" }}>Apologies</p>
-                            <p>Due to high confidentiality, i wont be able to share the whole thing here. <br />
+                            <p>Due to confidentiality, i wont be able to share the whole thing here. <br />
                                 Please reach out if your work & ideas, relate to mine.</p>
                         </div>
                     </div>
