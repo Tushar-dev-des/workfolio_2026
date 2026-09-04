@@ -2,10 +2,6 @@
     height: 144px;
     width: 100%;
     background-color: #fff;
-    /* background: url('./assets/footer_bg.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center; */
     border-top: 1px solid #11111010;
 }
 
@@ -27,7 +23,6 @@
     line-height: 2.5rem;
     font-weight: 300;
     color: #344054;
-    text-decoration: none;
 }
 
 .outro p {
@@ -55,10 +50,10 @@
 }
 
 .socials a {
-    text-decoration: none;
     color: #344054;
     font-size: 1rem;
     line-height: 1.25rem;
     font-weight: 300;
     letter-spacing: 0.2px;
+    cursor: pointer;
 }
