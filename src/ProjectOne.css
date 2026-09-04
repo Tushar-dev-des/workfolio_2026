@@ -12,6 +12,7 @@
     display: flex;
     flex-direction: column;
     gap: 5rem;
+    margin-bottom: 3rem;
 }
 
 .container_project_intro,
@@ -29,7 +30,7 @@
     grid-column: 1 / span 7;
     text-decoration: none;
     color: inherit;
-    margin: 0 0.75rem;
+    margin-left: 0.75rem;
 }
 
 .container_project_intro .project_intro h1 {
@@ -75,7 +76,7 @@
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
-    margin: 0 0.75rem;
+    margin-left: 0.75rem;
 }
 
 .tldr p {
@@ -107,6 +108,7 @@
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
+    margin-bottom: 3rem;
 }
 
 .metrics_row {
@@ -130,18 +132,10 @@
 }
 
 .project_slideshow {
-
     grid-column: 4 / span 9;
     width: 100%;
-    height: 100%;
-    background: #D1E9FF;
-    aspect-ratio: 16/9;
-    border: 1px solid #aed3f4;
-    background: url("./assets/travel_redesign.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
 }
+
 
 .container_my_role,
 .container_apologies {
@@ -153,7 +147,7 @@
 
 .my_role,
 .apologies {
-    grid-column: 4 / span 9;
+    grid-column: 4 / span 8;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;

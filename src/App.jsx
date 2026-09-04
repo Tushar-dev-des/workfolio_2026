@@ -5,7 +5,6 @@ import PatternBg from './PatternBg'
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
-import Footer from './Footer'
 
 gsap.registerPlugin(SplitText, useGSAP);
 
@@ -54,7 +53,6 @@ function App() {
         <PatternBg />
         <FirstFold />
         <Projects />
-        <Footer />
       </div >
     </>
   )

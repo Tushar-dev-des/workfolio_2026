@@ -1,15 +1,15 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
-import './ProjectPage.css'
-import Footer from './Footer'
+import './ProjectOne.css'
 import PatternBg from './PatternBg'
+import ProjectSlideshow from './Components/ProjectSlideshow'
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
 
 gsap.registerPlugin(SplitText, useGSAP);
 
-const ProjectPage = () => {
+const ProjectOne = () => {
 
     const { id } = useParams()
 
@@ -59,7 +59,7 @@ const ProjectPage = () => {
                         </div>
                     </div>
                     <div className="container_project_thumbnail">
-                        <div className="project_thumbnail"></div>
+                        <ProjectSlideshow />
                     </div>
                     <div className="container_tldr">
                         <div className="tldr">
@@ -85,9 +85,23 @@ const ProjectPage = () => {
                                         <p>users finally felt in control</p>
                                     </div>
                                     <div className="metric_card">
-                                        <div className="cd">
-                                            <h1>churn <span style={{ fontSize: '2.75rem' }}>🚫</span></h1>
-                                            <h1>growth <span style={{ fontSize: '2.75rem' }}>✅</span></h1>
+                                        <div>
+                                            <h1>churn <span style={{
+                                                fontSize: '2.75rem',
+                                                lineHeight: "1",
+                                            }}>🚫</span></h1>
+                                            <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+                                                <h1 style={{
+                                                    background: "linear-gradient(86deg, #BF9A66 0%, #ECC890 60%)",
+                                                    WebkitBackgroundClip: "text",
+                                                    backgroundClip: "text",
+                                                    color: "transparent",
+                                                }}>growth</h1>
+                                                <span style={{
+                                                    fontSize: '2.75rem', background: "fff",
+                                                    lineHeight: "1",
+                                                }}>✅</span>
+                                            </div>
                                         </div>
                                         <p>grabbed attention of big names</p>
                                     </div>
@@ -96,15 +110,15 @@ const ProjectPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="container_project_slideshow">
-                        <div className="project_slideshow"></div>
-                    </div>
+                    {/* <div className="container_project_slideshow">
+                        <ProjectSlideshow />
+                    </div> */}
                     <div className="container_my_role">
                         <div className="my_role">
                             <p style={{ fontWeight: "600", color: "#344054" }}>My role</p>
-                            <p>I owned end-to-end experience design on this project — from ideation through execution, down to notifications and edge cases — along with direct input into product strategy. </p>
-                            <p>A key part of this was qualitative research. Beyond our existing users, I partnered with sales to speak with competitors' users too, which surfaced pain points and mental models we wouldn't have found otherwise.</p>
-                            <p>I also worked closely with cross-functional teams and stakeholders, both directly and indirectly tied to the project, to keep decisions aligned and execution on track.</p>
+                            <p>I owned end-to-end experience design — from ideation through execution, from email notifications to edge cases — along with direct input into product strategy. </p>
+                            <p>Qualitative user & product research. Beyond our existing users, I partnered with sales to speak with competitors' users too, who surfaced pain points and mental models we wouldn't have found otherwise.</p>
+                            <p>Worked closely with cross-functional teams and stakeholders, both directly and indirectly tied to the project, to keep decisions aligned and execution on track.</p>
                         </div>
                     </div>
                     <div className="container_apologies">
@@ -116,9 +130,8 @@ const ProjectPage = () => {
                     </div>
                 </div>
             </div>
-            <Footer />
         </>
     )
 }
 
-export default ProjectPage
+export default ProjectOne

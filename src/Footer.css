@@ -1,7 +1,6 @@
 .footer_container {
     height: 144px;
     width: 100%;
-    padding: 2.5rem;
     background-color: #fff;
     /* background: url('./assets/footer_bg.svg');
     background-repeat: no-repeat;
@@ -18,6 +17,9 @@
     justify-content: space-between;
     align-items: center;
     text-align: left;
+    max-width: 1512px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
 }
 
 .outro h1 {
@@ -35,6 +37,14 @@
     color: #98a2b3;
     letter-spacing: 0.2px;
     width: 100%;
+}
+
+.copyright {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-weight: 300;
+    color: #98a2b3;
+    letter-spacing: 0.2px;
 }
 
 

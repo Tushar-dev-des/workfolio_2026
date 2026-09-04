@@ -10,6 +10,9 @@ const Footer = () => {
                     <h1>Like the vibe? Lets connect. </h1>
                     <p>Always open to work that makes a difference!</p>
                 </div>
+                <div className="copyright">
+                    © 2026 Tushar Mahajan.
+                </div>
                 <div className="socials">
                     <a rel="noopener noreferrer">tusharxmahajan@gmail.com</a>
                     <img onClick={() => window.open("https://www.linkedin.com/in/tusharxmahajan/", "_blank")} src={linkedIn} alt="" style={{ cursor: "pointer" }} />
