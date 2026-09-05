@@ -11,7 +11,7 @@ const Projects = () => {
                         </div>
                         <div className="desc">
                             <h3>Re-imagining corporate business travel</h3>
-                            <p>how redesigning business travel experience increased flight bookings by 2.5x, ~₹50,00,000 in cashflow, & grabbed attention of big enterprises</p>
+                            <p>How redesigning business travel experience increased flight bookings by 2.5x, ~₹50,00,000 in cashflow, & grabbed attention of big enterprises</p>
                         </div>
                     </Link>
                 </div>
@@ -30,8 +30,8 @@ const Projects = () => {
                         <div className="thumbnail">
                         </div>
                         <div className="desc">
-                            <h3>Re-imagining corporate business travel</h3>
-                            <p>how redesigning business travel experience increased flight bookings by 2.5x, ~₹50,00,000 in cashflow, & grabbed attention of big enterprises</p>
+                            <h3>Cleartrip Assured: Better choices for corporate stays</h3>
+                            <p>It was difficult for business travellers to find the best stays for their trips; Cleartrip assured is a curated collection of stays, handpicked & best-suited for them.</p>
                         </div>
                     </Link>
                 </div>

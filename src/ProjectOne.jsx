@@ -55,7 +55,7 @@ const ProjectOne = () => {
                     <div className="container_project_intro">
                         <div className='project_intro'>
                             <h1>Re-imagining business travel</h1>
-                            <p>This project was our thoughtful attempt towards this challenge and the bigger goal was to design an intuitive, frictionless seamless business travel experience, <br /> that allowed users to effortlessly compile and modify their travel options—including flights, hotels, buses, trains, and cabs—into a cohesive itinerary.</p>
+                            <p>This project was our thoughtful attempt to address the largely unsolved problem space of business travel experience with a larger goal of creating a more intuitive, frictionless, and seamless experience for business travellers, <br /> that allowed users to effortlessly compile and modify their travel options—including flights, hotels, buses, trains, and cabs—into a cohesive itinerary.</p>
                         </div>
                     </div>
                     <div className="container_project_thumbnail">
