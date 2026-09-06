@@ -8,12 +8,19 @@ import { SplitText } from "gsap/all";
 
 gsap.registerPlugin(SplitText, useGSAP);
 
+const INTRO_PLAYED_KEY = "introPlayed";
+
 function App() {
 
 
   useGSAP(() => {
+    if (sessionStorage.getItem(INTRO_PLAYED_KEY)) return;
+
     const heroSplit = new SplitText(".title", { type: "chars" });
-    const tl = gsap.timeline({ defaults: { ease: "expo.out" } });
+    const tl = gsap.timeline({
+      defaults: { ease: "expo.out" },
+      onComplete: () => sessionStorage.setItem(INTRO_PLAYED_KEY, "true"),
+    });
 
     tl.from(".pattern_bg, .name_logo_container p", {
       yPercent: -100,
@@ -22,7 +29,6 @@ function App() {
       delay: 1,
       opacity: 0.6,
     })
-
       .from(".first_line h1", {
         yPercent: 100,
         duration: 1.5,

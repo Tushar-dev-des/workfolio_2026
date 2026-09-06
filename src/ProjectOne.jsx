@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams, useNavigate } from 'react-router-dom'
 import './ProjectOne.css'
 import PatternBg from './PatternBg'
 import ProjectSlideshow from './Components/ProjectSlideshow'
@@ -12,6 +12,16 @@ gsap.registerPlugin(SplitText, useGSAP);
 const ProjectOne = () => {
 
     const { id } = useParams()
+    const navigate = useNavigate()
+
+    const goHome = (e) => {
+        e.preventDefault()
+        if (window.history.state?.idx > 0) {
+            navigate(-1)
+        } else {
+            navigate('/')
+        }
+    }
 
     useGSAP(() => {
 
@@ -51,7 +61,7 @@ const ProjectOne = () => {
             <PatternBg />
             <div className="container_project">
                 <div className="blocks">
-                    <Link to='/' className='name_logo_container'><p>tm.</p></Link>
+                    <Link to='/' className='name_logo_container' onClick={goHome}><p>tm.</p></Link>
                     <div className="container_project_intro">
                         <div className='project_intro'>
                             <h1>Re-imagining business travel</h1>
