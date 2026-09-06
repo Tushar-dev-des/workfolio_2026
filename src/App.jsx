@@ -43,7 +43,7 @@ function App() {
       .from(".projects_container", {
         yPercent: 50,
         duration: 1.5,
-      }, "-=1");
+      }, "-=1.5");
 
   }, [])
 
