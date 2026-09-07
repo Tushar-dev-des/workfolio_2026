@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import ProjectOne from './ProjectOne.jsx'
+import ProjectThree from './ProjectThree.jsx'
 import FallbackProject from './FallbackProject.jsx'
 import { createBrowserRouter, RouterProvider, Outlet, ScrollRestoration } from 'react-router-dom'
 import Footer from './Footer.jsx'
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
       },
       {
         path: "projects/3",
-        element: <FallbackProject />
+        element: <ProjectThree />
       },
       {
         path: "projects/4",

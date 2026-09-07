@@ -14,7 +14,7 @@ function App() {
 
 
   useGSAP(() => {
-    if (sessionStorage.getItem(INTRO_PLAYED_KEY)) return;
+    // if (sessionStorage.getItem(INTRO_PLAYED_KEY)) return;
 
     const heroSplit = new SplitText(".title", { type: "chars" });
     const tl = gsap.timeline({
@@ -48,6 +48,7 @@ function App() {
       }, "-=1")
       .from(".projects_container", {
         yPercent: 50,
+        opacity: 0,
         duration: 1.5,
       }, "-=1.5");
 

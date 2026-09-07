@@ -61,11 +61,11 @@ const ProjectOne = () => {
             <PatternBg />
             <div className="container_project">
                 <div className="blocks">
-                    <Link to='/' className='name_logo_container' onClick={goHome}><p>tm.</p></Link>
+                    <Link to='/' className='name_logo_container'><p>tm.</p></Link>
                     <div className="container_project_intro">
                         <div className='project_intro'>
                             <h1>Re-imagining business travel</h1>
-                            <p>This project was our thoughtful attempt to address the largely unsolved problem space of business travel experience with a larger goal of creating a more flexible, intuitive, and seamless experience for business travellers, that allowed them <br />to effortlessly compile and modify their travel options—including flights, hotels, buses, trains, and cabs—into a cohesive itinerary.</p>
+                            <p>This project was our thoughtful attempt to address the largely unsolved problem space of business travel experience with a larger goal of creating a more flexible, intuitive, and seamless experience for business travellers, that allowed them <br />to effortlessly compile and intuitively visualise their cohesive itinerary, as well as navigate seamlessly through the approval & booking flows.</p>
                         </div>
                     </div>
                     <div className="container_project_thumbnail">
@@ -73,7 +73,7 @@ const ProjectOne = () => {
                     </div>
                     <div className="container_tldr">
                         <div className="tldr">
-                            <p>tl;dr</p>
+                            <p>tl;dr (45d post implementation)</p>
                             <div className="container_metrics">
                                 <div className="metrics_row">
                                     <div className="metric_card">
