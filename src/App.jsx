@@ -2,6 +2,7 @@ import './App.css'
 import FirstFold from './FirstFold'
 import Projects from './Projects'
 import PatternBg from './PatternBg'
+import About from './About'
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
@@ -60,6 +61,7 @@ function App() {
         <PatternBg />
         <FirstFold />
         <Projects />
+        <About />
       </div >
     </>
   )

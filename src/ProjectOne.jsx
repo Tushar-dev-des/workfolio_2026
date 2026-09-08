@@ -131,6 +131,7 @@ const ProjectOne = () => {
                             <p>Worked closely with cross-functional teams and stakeholders, both directly and indirectly tied to the project, to keep decisions aligned and execution on track.</p>
                         </div>
                     </div>
+
                     <div className="container_apologies">
                         <div className="apologies">
                             <p style={{ fontWeight: "600", color: "#344054" }}>Apologies</p>

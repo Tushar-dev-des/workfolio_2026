@@ -10,8 +10,8 @@ const Projects = () => {
                         <div className="thumbnail">
                         </div>
                         <div className="desc">
-                            <h3>Re-imagining corporate business travel</h3>
-                            <p>How redesigning business travel experience increased flight bookings by 2.5x, ~₹50,00,000 in cashflow, & grabbed attention of big enterprises</p>
+                            <h3>DICE Travel: Business travel experience, but a seamless one.</h3>
+                            <p>Legacy systems offer rigid workflows, clunky interfaces and an overall fragmented ux. <br /> We designed one, that the business travellers actually needed.</p>
                         </div>
                     </Link>
                 </div>
@@ -21,7 +21,7 @@ const Projects = () => {
                         </div>
                         <div className="desc">
                             <h3>Designing <span className='atlas_ai'>Atlas</span> : an AI beyond the usual copilots; for the enterprises</h3>
-                            <p>Atlas is an AI experience across the Dice suite, for the complex world of enterprise spends and finances, <br /> that bridge the gap between information, insight, and action.</p>
+                            <p>Atlas is an AI experience across the Dice suite, for the complex world of enterprise spends and finances, <br /> that bridges the gap between information, insight, and action.</p>
                         </div>
                     </Link>
                 </div>
@@ -31,7 +31,7 @@ const Projects = () => {
                         </div>
                         <div className="desc">
                             <h3>Cleartrip Assured: Better choices for corporate stays</h3>
-                            <p>It was difficult for business travellers to find the best stays for their trips; Cleartrip assured is a curated collection of stays, handpicked & best-suited for them.</p>
+                            <p>It was difficult for business travellers to find the best stays for their trips; <br /> Cleartrip assured is a curated collection of stays, handpicked & best-suited for them.</p>
                         </div>
                     </Link>
                 </div>
