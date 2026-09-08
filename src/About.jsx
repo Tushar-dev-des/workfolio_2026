@@ -19,8 +19,8 @@ const About = () => {
         gsap.from('.puzzle_item', {
             scrollTrigger: {
                 trigger: ".puzzle_container",
-                start: "top 50%",
-                end: "top -120%",
+                start: "top 0%",
+                end: "top -150%",
                 scrub: true,
             },
             opacity: 0,
@@ -31,8 +31,8 @@ const About = () => {
         gsap.from('.missing_item_one', {
             scrollTrigger: {
                 trigger: ".puzzle_container",
-                start: "top -100%",
-                end: "top -290%",
+                start: "top -120%",
+                end: "top -300%",
                 scrub: true,
             },
 
@@ -46,7 +46,7 @@ const About = () => {
         gsap.from('.missing_item_two', {
             scrollTrigger: {
                 trigger: ".puzzle_container",
-                start: "top -150%",
+                start: "top -180%",
                 end: "top -380%",
                 scrub: true,
             },
@@ -130,14 +130,11 @@ const About = () => {
                     <div className="about_content">
                         {/* <br />
                         <br /> */}
-                        being a systems thinker, I’ve found & developed my own robust way of
-                        approaching problems.
+                        As a keen observer, I've developed & practised my own way of approaching problems.
                     </div>
                     {/* <div className="about_content" style={{ textAlign: 'left', maxWidth: '80%', alignSelf: 'flex-end' }}> */}
                     <div className="about_content">
-                        I look at them as a part of an unfinished story, the user being the
-                        central focus point and what we need to look after now is how
-                        seamlessly and effortlessly can we complete this story.
+                        I see them as a crucial moment inside an unfinished story; <br /> the user being already present at that moment, and our job now is to complete that story as seamlessly and effortlessly as possible, <br /> by connecting the right dots.
                     </div>
                     {/* <div className="about_content action">Read my complete approach</div> */}
                 </div>

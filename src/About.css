@@ -22,7 +22,7 @@
     justify-content: center;
     color: #344054;
     gap: 2rem;
-    padding: 1rem;
+    padding: 1.5rem;
 }
 
 .puzzle_container {
@@ -39,7 +39,7 @@
     justify-content: center;
     align-items: center;
     overflow: visible;
-    opacity: 0.32;
+    opacity: 0.3;
 }
 
 .puzzle div {
