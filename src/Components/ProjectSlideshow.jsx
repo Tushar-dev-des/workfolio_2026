@@ -1,59 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import './ProjectSlideshow.css';
-import travelRedesign1 from '../assets/travel_redesign_1.png';
-import travelRedesign2 from '../assets/travel_redesign_2.png';
-import travelRedesign3 from '../assets/travel_redesign_3.png';
-import travelRedesign4 from '../assets/travel_redesign_4.png';
-import travelRedesign5 from '../assets/travel_redesign_5.png';
-import travelRedesign6 from '../assets/travel_redesign_6.png';
 
-
-const DEFAULT_SLIDES = [
-  {
-    id: 1,
-    url: travelRedesign1,
-    title: 'Smart Business Travel Itinerary',
-    caption: 'Unified compilation combining flights, hotels, trains, and cabs into a seamless itinerary.',
-    tag: 'Screen 01 · Itinerary Flow'
-  },
-  {
-    id: 2,
-    url: travelRedesign2,
-    title: 'Enterprise Policy & Approval System',
-    caption: 'Frictionless rule-based approvals that increased trip confirmations by 3x.',
-    tag: 'Screen 02 · Corporate Policies'
-  },
-  {
-    id: 3,
-    url: travelRedesign3,
-    title: 'Collaborative Multi-traveler Workspace',
-    caption: 'Shared travel planning and coordination for distributed teams and executives.',
-    tag: 'Screen 03 · Team Travel'
-  },
-  {
-    id: 4,
-    url: travelRedesign4,
-    title: 'Real-time Modifications & Cashflow Dashboard',
-    caption: 'Instant rescheduling, proactive flight alerts, and ~₹50 lacs unlocked in positive cashflow.',
-    tag: 'Screen 04 · Insights & Management'
-  },
-  {
-    id: 5,
-    url: travelRedesign5,
-    title: 'Real-time Modifications & Cashflow Dashboard',
-    caption: 'Instant rescheduling, proactive flight alerts, and ~₹50 lacs unlocked in positive cashflow.',
-    tag: 'Screen 04 · Insights & Management'
-  },
-  {
-    id: 6,
-    url: travelRedesign6,
-    title: 'Real-time Modifications & Cashflow Dashboard',
-    caption: 'Instant rescheduling, proactive flight alerts, and ~₹50 lacs unlocked in positive cashflow.',
-    tag: 'Screen 04 · Insights & Management'
-  },
-];
-
-const ProjectSlideshow = ({ slides = DEFAULT_SLIDES, className = '' }) => {
+const ProjectSlideshow = ({ slides = [], className = '' }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [dragOffset, setDragOffset] = useState(0);

@@ -1,16 +1,52 @@
-import React from 'react'
-import { Link, useParams } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Link, useParams, useNavigate } from 'react-router-dom'
 import './ProjectThree.css'
 import PatternBg from './PatternBg'
+import ProjectSlideshow from './Components/ProjectSlideshow'
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
+import { INTRO_PLAYED_KEY } from './introFlag'
+import cleartripAssured1 from './assets/cleartrip_assured_1.png';
+import cleartripAssured2 from './assets/cleartrip_assured_2.png';
+import cleartripAssured3 from './assets/cleartrip_assured_3.png';
 
 gsap.registerPlugin(SplitText, useGSAP);
+
+const CLEARTRIP_SLIDES = [
+    {
+        id: 1,
+        url: cleartripAssured1,
+        title: 'Cleartrip Assured',
+        caption: 'A curated collection of pre-validated stays, handpicked & best-suited for business travellers.',
+        tag: 'Screen 01 · Assured Stays'
+    },
+    {
+        id: 2,
+        url: cleartripAssured2,
+        title: 'Cleartrip Assured',
+        caption: 'A curated collection of pre-validated stays, handpicked & best-suited for business travellers.',
+        tag: 'Screen 02 · Assured Stays'
+    },
+    {
+        id: 3,
+        url: cleartripAssured3,
+        title: 'Cleartrip Assured',
+        caption: 'A curated collection of pre-validated stays, handpicked & best-suited for business travellers.',
+        tag: 'Screen 03 · Assured Stays'
+    },
+];
 
 const ProjectOne = () => {
 
     const { id } = useParams()
+    const navigate = useNavigate()
+
+    const goHome = (e) => {
+        e.preventDefault()
+        sessionStorage.removeItem(INTRO_PLAYED_KEY)
+        navigate('/')
+    }
 
     useGSAP(() => {
 
@@ -50,7 +86,7 @@ const ProjectOne = () => {
             <PatternBg />
             <div className="container_project">
                 <div className="blocks">
-                    <Link to='/' className='name_logo_container'><p>tm.</p></Link>
+                    <Link to='/' className='name_logo_container' onClick={goHome}><p>tm.</p></Link>
                     <div className="container_project_intro">
                         <div className='project_intro'>
                             <h1>Cleartrip Assured: Better choices for corporate stays</h1>
@@ -61,7 +97,7 @@ const ProjectOne = () => {
                         </div>
                     </div>
                     <div className="container_project_thumbnail">
-                        <div className="project_thumbnail"></div>
+                        <ProjectSlideshow slides={CLEARTRIP_SLIDES} />
                     </div>
                     <div className="container_tldr">
                         <div className="tldr">

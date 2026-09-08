@@ -6,16 +6,15 @@ import About from './About'
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
+import { INTRO_PLAYED_KEY } from "./introFlag";
 
 gsap.registerPlugin(SplitText, useGSAP);
-
-const INTRO_PLAYED_KEY = "introPlayed";
 
 function App() {
 
 
   useGSAP(() => {
-    // if (sessionStorage.getItem(INTRO_PLAYED_KEY)) return;
+    if (sessionStorage.getItem(INTRO_PLAYED_KEY)) return;
 
     const heroSplit = new SplitText(".title", { type: "chars" });
     const tl = gsap.timeline({

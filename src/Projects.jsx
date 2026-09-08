@@ -1,12 +1,14 @@
 import './Projects.css'
 import { Link } from 'react-router-dom'
 
+
+
 const Projects = () => {
     return (
         <div className='projects_container'>
             <div className="projects">
                 <div className="project p1">
-                    <Link to="/projects/1" className="project_content">
+                    <Link to="/projects/1" className="project_content" >
                         <div className="thumbnail">
                         </div>
                         <div className="desc">
@@ -16,7 +18,7 @@ const Projects = () => {
                     </Link>
                 </div>
                 <div className="project p2">
-                    <Link to="/projects/2" className="project_content">
+                    <Link to="/projects/2" className="project_content" >
                         <div className="thumbnail">
                         </div>
                         <div className="desc">
@@ -36,7 +38,7 @@ const Projects = () => {
                     </Link>
                 </div>
                 <div className="project p4">
-                    <Link to="/projects/4" className="project_content">
+                    <Link to="/projects/4" className="project_content" >
                         <div className="thumbnail">
                         </div>
                         <div className="desc">
