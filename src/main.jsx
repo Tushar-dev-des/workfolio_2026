@@ -7,13 +7,11 @@ import ProjectThree from './ProjectThree.jsx'
 import FallbackProject from './FallbackProject.jsx'
 import Footer from './Footer.jsx'
 import { createBrowserRouter, RouterProvider, Outlet, ScrollRestoration } from 'react-router-dom'
-import { Analytics } from '@vercel/analytics/next';
 
 const Root = () => {
   return (
     <>
       <ScrollRestoration />
-      <Analytics />
       <Outlet />
       <Footer />
     </>

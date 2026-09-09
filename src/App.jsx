@@ -7,6 +7,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
 import { INTRO_PLAYED_KEY } from "./introFlag";
+import { Analytics } from "@vercel/analytics/react";
 
 gsap.registerPlugin(SplitText, useGSAP);
 
@@ -57,6 +58,7 @@ function App() {
   return (
     <>
       <div className='container'>
+        <Analytics />
         <PatternBg />
         <FirstFold />
         <Projects />
