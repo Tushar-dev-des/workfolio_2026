@@ -10,11 +10,21 @@ import { INTRO_PLAYED_KEY } from "./introFlag";
 
 gsap.registerPlugin(SplitText, useGSAP);
 
+const isHardReload = () => {
+  const [entry] = performance.getEntriesByType("navigation");
+  return entry?.type === "reload";
+};
+
 function App() {
 
 
   useGSAP(() => {
-    if (sessionStorage.getItem(INTRO_PLAYED_KEY)) return;
+    if (isHardReload()) {
+      window.scrollTo(0, 0);
+      sessionStorage.removeItem(INTRO_PLAYED_KEY);
+    } else if (sessionStorage.getItem(INTRO_PLAYED_KEY)) {
+      return;
+    }
 
     const heroSplit = new SplitText(".title", { type: "chars" });
     const tl = gsap.timeline({
