@@ -94,7 +94,10 @@ const About = () => {
                 scrub: true,
             },
             opacity: 0,
-            stagger: 0.06,
+            stagger: {
+                each: 0.06,
+                // from: "random",
+            },
             y: 30,
             rotation: 15,
             filter: "blur(15px)"

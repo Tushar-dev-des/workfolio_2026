@@ -99,8 +99,8 @@ const ProjectOne = () => {
                 delay: 1,
             }, "-=1")
             .from(".container_project_thumbnail", {
-                yPercent: 20,
-                duration: 1.5,
+                yPercent: 25,
+                duration: 2,
                 opacity: 0,
             }, "-=1.25");
     })
@@ -175,17 +175,17 @@ const ProjectOne = () => {
                     <div className="container_my_role">
                         <div className="my_role">
                             <p style={{ fontWeight: "600", color: "#344054" }}>My role</p>
-                            <p>I owned end-to-end experience design — from ideation through execution, from email notifications to edge cases — along with direct input into product strategy. </p>
+                            <p>I owned end-to-end experience design: right from the ideation through execution, from email notifications to edge cases; <br /> along with direct input into product strategy. </p>
                             <p>Qualitative user & product research. Beyond our existing users, I partnered with sales to speak with competitors' users too, who surfaced pain points and mental models we wouldn't have found otherwise.</p>
                             <p>Worked closely with cross-functional teams and stakeholders, both directly and indirectly tied to the project, to keep decisions aligned and execution on track.</p>
                         </div>
                     </div>
 
-                    <div className="container_apologies">
-                        <div className="apologies">
-                            <p style={{ fontWeight: "600", color: "#344054" }}>Apologies</p>
+                    <div className="container_confidentiality">
+                        <div className="confidentiality">
+                            <p style={{ fontWeight: "600", color: "#344054" }}>Curious to know more?</p>
                             <p>Due to confidentiality, i wont be able to share the whole thing here. <br />
-                                Please reach out if your work & ideas, relate to mine.</p>
+                                Please reach out; if your work & ideas relate to mine.</p>
                         </div>
                     </div>
                 </div>

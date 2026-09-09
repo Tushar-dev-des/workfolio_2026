@@ -130,15 +130,15 @@ const ProjectOne = () => {
                     <div className="container_my_role">
                         <div className="my_role">
                             <p style={{ fontWeight: "600", color: "#344054" }}>My role</p>
-                            <p>End-to-end experience design — established product ux framework for similar feature releases in the future</p>
-                            <p>Worked closely with cross-functional teams and stakeholders, both directly and indirectly tied to the project, to keep decisions aligned and execution on track.</p>
+                            <p>End-to-end experience design: established product ux framework for new releases in the future, across similar buckets and categories.</p>
+                            <p>This was a partnership project, with already established product strategy and vision. <br /> My role was to work closely with the Cleartrip product team & AMs, along with the Dice engineering team to make it live.</p>
                         </div>
                     </div>
-                    <div className="container_apologies">
-                        <div className="apologies">
-                            <p style={{ fontWeight: "600", color: "#344054" }}>Apologies</p>
+                    <div className="container_confidentiality">
+                        <div className="confidentiality">
+                            <p style={{ fontWeight: "600", color: "#344054" }}>Curious to know more?</p>
                             <p>Due to confidentiality, i wont be able to share the whole thing here. <br />
-                                Please reach out if your work & ideas, relate to mine.</p>
+                                Please reach out; if your work & ideas relate to mine.</p>
                         </div>
                     </div>
                 </div>

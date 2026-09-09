@@ -7,6 +7,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
 import { INTRO_PLAYED_KEY } from "./introFlag";
+import { Analytics } from '@vercel/analytics/next';
 
 gsap.registerPlugin(SplitText, useGSAP);
 
@@ -61,6 +62,7 @@ function App() {
         <FirstFold />
         <Projects />
         <About />
+        <Analytics />
       </div >
     </>
   )
