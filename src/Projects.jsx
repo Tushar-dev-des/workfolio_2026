@@ -13,7 +13,7 @@ const Projects = () => {
                         </div>
                         <div className="desc">
                             <h3>DICE Travel: Business travel experience, but a seamless one.</h3>
-                            <p>Legacy systems offer rigid workflows, clunky interfaces and an overall fragmented ux. <br /> We designed one, that the business travellers actually needed.</p>
+                            <p>Legacy systems offered rigid workflows, clunky interfaces and an overall fragmented ux. <br /> We designed one, that the business travellers actually needed.</p>
                         </div>
                     </Link>
                 </div>
@@ -23,7 +23,7 @@ const Projects = () => {
                         </div>
                         <div className="desc">
                             <h3>Designing <span className='atlas_ai'>Atlas</span> : an AI beyond the usual copilots; for the enterprises</h3>
-                            <p>Atlas is an AI experience across the Dice suite, for the complex world of enterprise spends and finances, <br /> that bridges the gap between information, insight, and action.</p>
+                            <p>Atlas is an AI experience across the Dice suite, for the complex world of enterprise finances, <br /> that bridges the gap between information, insight, and action.</p>
                         </div>
                     </Link>
                 </div>

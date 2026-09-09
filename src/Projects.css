@@ -1,8 +1,7 @@
 .projects_container {
     width: 100%;
-    padding: 2.5rem;
+    padding: 2.5rem 2.5rem 0 2.5rem;
     /* background: #597ff7; */
-    margin-bottom: 5rem;
 }
 
 .projects {
@@ -81,7 +80,7 @@
 .p3 .project_content .thumbnail {
     /* border: 1px solid #00000010; */
     /* border: 1px solid #f9e7b9; */
-    background: url("./assets/cleartrip_assured_1.png");
+    background: url("./assets/cleartrip_assured_1.webp");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

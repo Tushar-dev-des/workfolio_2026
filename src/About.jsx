@@ -62,7 +62,7 @@ const About = () => {
 
             scrollTrigger: {
                 trigger: ".third_fold",
-                start: "bottom 140%",
+                start: "bottom 110%",
                 toggleActions: "play none none reverse",
             },
             opacity: 1,

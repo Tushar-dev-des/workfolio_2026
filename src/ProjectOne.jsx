@@ -33,7 +33,7 @@ const DEFAULT_SLIDES = [
     },
     {
         id: 3,
-        url: travelRedesign3,
+        url: travelRedesign5,
         title: 'Collaborative Multi-traveler Workspace',
         caption: 'Shared travel planning and coordination for distributed teams and executives.',
         tag: 'Screen 03 · Team Travel'
@@ -47,7 +47,7 @@ const DEFAULT_SLIDES = [
     },
     {
         id: 5,
-        url: travelRedesign5,
+        url: travelRedesign3,
         title: 'Real-time Modifications & Cashflow Dashboard',
         caption: 'Instant rescheduling, proactive flight alerts, and ~₹50 lacs unlocked in positive cashflow.',
         tag: 'Screen 04 · Insights & Management'

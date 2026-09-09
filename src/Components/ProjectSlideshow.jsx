@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import './ProjectSlideshow.css';
 
-const ProjectSlideshow = ({ slides = [], className = '' }) => {
+const ProjectSlideshow = ({ slides = [], className = '', }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [dragOffset, setDragOffset] = useState(0);

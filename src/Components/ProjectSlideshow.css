@@ -5,7 +5,6 @@
   aspect-ratio: 16/9;
   position: relative;
   overflow: hidden;
-  background: #fff;
   user-select: none;
   cursor: grab;
   outline: none;
