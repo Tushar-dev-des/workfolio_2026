@@ -62,7 +62,7 @@
 .p1 .project_content .thumbnail {
     /* border: 1px solid #00000010; */
     /* border: 1px solid #A8D6FF; */
-    background: url("./assets/travel_redesign_1.png");
+    background: url("./assets/travel_redesign_1.webp");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -71,7 +71,7 @@
 .p2 .project_content .thumbnail {
     /* border: 1px solid #00000010; */
     /* border: 1px solid #f3bdd1; */
-    background: url("./assets/ai_agent.png");
+    background: url("./assets/ai_agent.webp");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -89,7 +89,7 @@
 .p4 .project_content .thumbnail {
     /* border: 1px solid #00000010; */
     /* border: 1px solid #caa4f1; */
-    background: url("./assets/upstox.png");
+    background: url("./assets/upstox.webp");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

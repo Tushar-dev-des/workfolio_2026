@@ -7,12 +7,12 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
 import { INTRO_PLAYED_KEY } from './introFlag'
-import travelRedesign1 from './assets/travel_redesign_1.png';
-import travelRedesign2 from './assets/travel_redesign_2.png';
-import travelRedesign3 from './assets/travel_redesign_3.png';
-import travelRedesign4 from './assets/travel_redesign_4.png';
-import travelRedesign5 from './assets/travel_redesign_5.png';
-import travelRedesign6 from './assets/travel_redesign_6.png';
+import travelRedesign1 from './assets/travel_redesign_1.webp';
+import travelRedesign2 from './assets/travel_redesign_2.webp';
+import travelRedesign3 from './assets/travel_redesign_3.webp';
+import travelRedesign4 from './assets/travel_redesign_4.webp';
+import travelRedesign5 from './assets/travel_redesign_5.webp';
+import travelRedesign6 from './assets/travel_redesign_6.webp';
 
 gsap.registerPlugin(SplitText, useGSAP);
 
