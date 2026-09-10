@@ -109,6 +109,8 @@ const ProjectOne = () => {
         <>
             <PatternBg />
             <div className="container_project">
+                <div className="marquee-item"></div>
+                <div className="marquee-item-shadow"></div>
                 <div className="blocks">
                     <Link to='/' className='name_logo_container' onClick={goHome}><p>tm.</p></Link>
                     <div className="container_project_intro">
@@ -184,7 +186,7 @@ const ProjectOne = () => {
                     <div className="container_confidentiality">
                         <div className="confidentiality">
                             <p style={{ fontWeight: "600", color: "#344054" }}>Curious to know more?</p>
-                            <p>Due to confidentiality, i wont be able to share the whole thing here. <br />
+                            <p>This project is confidential. <br />
                                 Please reach out; if your work & ideas relate to mine.</p>
                         </div>
                     </div>

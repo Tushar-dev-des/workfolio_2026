@@ -1,9 +1,68 @@
 import './Projects.css'
 import { Link } from 'react-router-dom'
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all"
+
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 
 
 const Projects = () => {
+    useGSAP(() => {
+        gsap.from('.p1 .project_content .thumbnail', {
+            scrollTrigger: {
+                trigger: ".p1",
+                start: "top 90%",
+                end: "top 50%",
+                scrub: true,
+            },
+            scale: 0.92,
+            filter: "blur(12px)",
+            opacity: 0.7,
+            transformOrigin: "bottom left",
+
+        })
+        gsap.from('.p2 .project_content .thumbnail', {
+            scrollTrigger: {
+                trigger: ".p2",
+                start: "top 90%",
+                end: "top 50%",
+                scrub: true,
+            },
+            scale: 0.92,
+            filter: "blur(12px)",
+            opacity: 0.7,
+            transformOrigin: "bottom right",
+
+        })
+        gsap.from('.p3 .project_content .thumbnail', {
+            scrollTrigger: {
+                trigger: ".p3",
+                start: "top 90%",
+                end: "top 50%",
+                scrub: true,
+            },
+            scale: 0.92,
+            filter: "blur(12px)",
+            opacity: 0.7,
+            transformOrigin: "bottom left",
+
+        })
+        gsap.from('.p4 .project_content .thumbnail', {
+            scrollTrigger: {
+                trigger: ".p4",
+                start: "top 90%",
+                end: "top 50%",
+                scrub: true,
+            },
+            scale: 0.92,
+            filter: "blur(12px)",
+            opacity: 0.7,
+            transformOrigin: "bottom right",
+
+        })
+    }, [])
     return (
         <div className='projects_container'>
             <div className="projects">

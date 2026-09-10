@@ -29,9 +29,9 @@ function FirstFold() {
                         </div>
                     </div>
                     <div className="subtitle_container">
-                        <div>- Currently at<a href="https://dice.tech/" target='blank' ><div className='dice_pill'><img src={dice_logo} alt="logo_dice" />Dice</div></a>now a part of<a href="https://www.zaggle.in/" target='blank' ><div className='dice_pill' style={{ color: '#ED3B41' }}><img src={zaggle_logo} alt="logo_dice" />Zaggle</div></a> </div>
-                        <div>- solving complex problems of the enterprise spends, finances, and operations space</div>
-                        <div>- ‘Jack of all trades, master of a few’</div>
+                        <div>Currently at<a href="https://dice.tech/" target='blank' ><div className='dice_pill'><img src={dice_logo} alt="logo_dice" />Dice</div></a>now a part of<a href="https://www.zaggle.in/" target='blank' ><div className='dice_pill' style={{ color: '#ED3B41' }}><img src={zaggle_logo} alt="logo_dice" />Zaggle</div></a> </div>
+                        <div>solving complex problems of the enterprise spends, finances, and operations space</div>
+                        <div>‘Jack of all trades, master of a few’</div>
                     </div>
                 </div>
             </div>

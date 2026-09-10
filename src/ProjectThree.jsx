@@ -137,7 +137,7 @@ const ProjectOne = () => {
                     <div className="container_confidentiality">
                         <div className="confidentiality">
                             <p style={{ fontWeight: "600", color: "#344054" }}>Curious to know more?</p>
-                            <p>Due to confidentiality, i wont be able to share the whole thing here. <br />
+                            <p>This work is confidential. <br />
                                 Please reach out; if your work & ideas relate to mine.</p>
                         </div>
                     </div>

@@ -7,8 +7,8 @@ const Footer = () => {
         <div className='footer_container'>
             <div className='footer'>
                 <div className='outro'>
-                    <h1>Like the vibe? Lets connect. </h1>
-                    <p>Always open to work that makes a difference!</p>
+                    <h1>Always open to: work that makes a difference! </h1>
+                    <p>© 2026 Tushar Mahajan.</p>
                 </div>
                 <div className="copyright">
                     © 2026 Tushar Mahajan.

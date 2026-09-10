@@ -1,8 +1,8 @@
 .projects_container {
     width: 100%;
     padding: 2.5rem 2.5rem 0 2.5rem;
-    /* background: #597ff7; */
 }
+
 
 .projects {
     width: 100%;
@@ -39,22 +39,20 @@
 }
 
 .desc {
-    font-size: 1.15rem;
-    line-height: 1.75rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
     font-weight: 300;
     color: #98a2b3;
-    letter-spacing: 0.2px;
+    letter-spacing: 0.1px;
     margin-left: 0.75rem;
 }
 
 .desc h3 {
-
-    font-size: 1.25rem;
-    line-height: 1.75rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
     font-weight: 500;
     color: #344054;
     text-decoration: none;
-    letter-spacing: 0px;
 }
 
 

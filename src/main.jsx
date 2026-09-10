@@ -5,12 +5,21 @@ import App from './App.jsx'
 import ProjectOne from './ProjectOne.jsx'
 import ProjectThree from './ProjectThree.jsx'
 import FallbackProject from './FallbackProject.jsx'
+import 'lenis/dist/lenis.css'
+import { ReactLenis, useLenis } from 'lenis/react'
 import Footer from './Footer.jsx'
 import { createBrowserRouter, RouterProvider, Outlet, ScrollRestoration } from 'react-router-dom'
 
 const Root = () => {
+
+  const lenis = useLenis((lenis) => {
+    // called every scroll
+    console.log(lenis)
+  })
+
   return (
     <>
+      <ReactLenis root />
       <ScrollRestoration />
       <Outlet />
       <Footer />

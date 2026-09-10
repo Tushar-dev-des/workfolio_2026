@@ -57,11 +57,11 @@ function App() {
         duration: 1,
         stagger: 0.2,
       }, "-=1")
-      .from(".projects_container", {
-        yPercent: 50,
-        opacity: 0,
-        duration: 1.5,
-      }, "-=1.5");
+    // .from(".projects_container", {
+    //   yPercent: 50,
+    //   opacity: 0,
+    //   duration: 1.5,
+    // }, "-=1.5");
 
   }, [])
 

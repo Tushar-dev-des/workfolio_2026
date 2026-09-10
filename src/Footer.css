@@ -19,15 +19,17 @@
 }
 
 .outro h1 {
-    font-size: 1.5rem;
-    line-height: 2.5rem;
+    font-size: 1rem;
+    line-height: 1.75rem;
     font-weight: 300;
+    width: 360px;
+    letter-spacing: 0.2px;
     color: #344054;
 }
 
 .outro p {
     font-size: 1rem;
-    line-height: 1.25rem;
+    line-height: 1.5rem;
     font-weight: 300;
     color: #98a2b3;
     letter-spacing: 0.2px;
@@ -35,11 +37,11 @@
 }
 
 .copyright {
-    font-size: 1rem;
+    font-size: 0.875rem;
     line-height: 1.25rem;
     font-weight: 300;
     color: #98a2b3;
-    letter-spacing: 0.2px;
+    display: none;
 }
 
 
@@ -47,6 +49,8 @@
     display: flex;
     align-items: center;
     gap: 2rem;
+    width: 360px;
+    justify-content: flex-end;
 }
 
 .socials a {
