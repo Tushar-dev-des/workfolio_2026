@@ -11,7 +11,7 @@
 
 .marquee-item {
     position: absolute;
-    height: 36px;
+    height: 32px;
     width: 160px;
     background: url("./assets/plane.webp");
     background-repeat: no-repeat;
@@ -19,13 +19,13 @@
     background-size: contain;
     top: 4%;
     transform: translateY(-50%);
-    animation: slide-across 24s linear 5s both;
+    animation: slide-across 24s linear 2.5s both;
     transform: scaleX(-1);
 }
 
 .marquee-item-shadow {
     position: absolute;
-    height: 28px;
+    height: 40px;
     width: 160px;
     background: url("./assets/plane_shadow.webp");
     opacity: 0.1;
@@ -35,7 +35,7 @@
     top: 18%;
     transform: translateY(-50%);
     transform: scaleX(-1);
-    animation: slide-across-shadow 24s linear 5.5s both;
+    animation: slide-across-shadow 24s linear 3s both;
 }
 
 @keyframes slide-across {

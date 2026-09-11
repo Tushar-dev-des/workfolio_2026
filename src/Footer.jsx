@@ -65,7 +65,7 @@ const Footer = () => {
                 </div>
                 <div className="socials">
                     <a rel="noopener noreferrer">tusharxmahajan@gmail.com</a>
-                    <img onClick={() => window.open("https://www.linkedin.com/in/tusharxmahajan/", "_blank")} src={linkedIn} alt="" style={{ cursor: "pointer" }} />
+                    <img onClick={() => window.open("https://www.linkedin.com/in/tusharxmahajan/", "_blank")} src={linkedIn} alt="" style={{ cursor: "pointer", height: "1.125rem", width: "1.125rem" }} />
                 </div>
             </div>
         </div>
