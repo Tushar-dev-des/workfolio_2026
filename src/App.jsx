@@ -50,12 +50,14 @@ function App() {
         duration: 1,
         stagger: 0.02,
         opacity: 0,
+        filter: "blur(12px)",
       }, "-=0.5")
       .from(".subtitle_container div", {
         opacity: 0,
         yPercent: 100,
         duration: 1,
         stagger: 0.2,
+        filter: "blur(12px)",
       }, "-=1")
     // .from(".projects_container", {
     //   yPercent: 50,
