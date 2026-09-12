@@ -37,25 +37,25 @@ function App() {
       yPercent: -100,
       duration: 2,
       ease: "power4.inOut",
-      delay: 1,
       opacity: 0.6,
     })
       .from(".first_line h1", {
-        yPercent: 100,
+        y: 20,
         duration: 1.5,
         opacity: 0,
+        filter: "blur(12px)",
       })
       .from(heroSplit.chars, {
-        yPercent: 100,
-        duration: 1,
+        y: 20,
+        duration: 1.5,
         stagger: 0.02,
         opacity: 0,
         filter: "blur(12px)",
       }, "-=0.5")
       .from(".subtitle_container div", {
         opacity: 0,
-        yPercent: 100,
-        duration: 1,
+        y: 20,
+        duration: 1.5,
         stagger: 0.2,
         filter: "blur(12px)",
       }, "-=1")

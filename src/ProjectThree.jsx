@@ -37,7 +37,7 @@ const CLEARTRIP_SLIDES = [
     },
 ];
 
-const ProjectOne = () => {
+const ProjectThree = () => {
 
     const { id } = useParams()
     const navigate = useNavigate()
@@ -147,4 +147,4 @@ const ProjectOne = () => {
     )
 }
 
-export default ProjectOne
+export default ProjectThree

@@ -4,6 +4,7 @@ import './index.css'
 import App from './App.jsx'
 import ProjectOne from './ProjectOne.jsx'
 import ProjectThree from './ProjectThree.jsx'
+import ProjectFour from './ProjectFour.jsx'
 import FallbackProject from './FallbackProject.jsx'
 import 'lenis/dist/lenis.css'
 import { ReactLenis, useLenis } from 'lenis/react'
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: "projects/3",
         element: <ProjectThree />
+      },
+      {
+        path: "projects/4",
+        element: <ProjectFour />
       },
       {
         path: "projects/4",

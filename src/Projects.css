@@ -16,6 +16,7 @@
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
     gap: 2.5rem;
+
 }
 
 .project_content {
@@ -25,7 +26,9 @@
     grid-column: 1 / span 9;
     text-decoration: none;
     color: inherit;
+    /* transition: transform 0.4s ease; */
 }
+
 
 .project:nth-child(even) .project_content {
     grid-column: 4 / span 9;
@@ -37,6 +40,7 @@
     background: #D1E9FF;
     aspect-ratio: 16/9;
 }
+
 
 .desc {
     font-size: 1rem;
@@ -87,7 +91,7 @@
 .p4 .project_content .thumbnail {
     /* border: 1px solid #00000010; */
     /* border: 1px solid #caa4f1; */
-    background: url("./assets/upstox.webp");
+    background: url("./assets/upstox_1.webp");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

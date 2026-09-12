@@ -8,58 +8,6 @@
     overflow-x: hidden;
 }
 
-
-.marquee-item {
-    position: absolute;
-    height: 28px;
-    width: 160px;
-    background: url("./assets/plane.webp");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    top: 4%;
-    transform: translateY(-50%);
-    animation: slide-across 24s linear 2.5s both;
-    transform: scaleX(-1);
-}
-
-.marquee-item-shadow {
-    position: absolute;
-    height: 40px;
-    width: 160px;
-    background: url("./assets/plane_shadow.webp");
-    opacity: 0.1;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    top: 18%;
-    transform: translateY(-50%);
-    transform: scaleX(-1);
-    animation: slide-across-shadow 24s linear 3s both;
-}
-
-@keyframes slide-across {
-    from {
-        left: -30%;
-    }
-
-    to {
-        left: 100%;
-        /* clears its own width past the left edge */
-    }
-}
-
-@keyframes slide-across-shadow {
-    from {
-        left: -30%;
-    }
-
-    to {
-        left: 100%;
-        /* clears its own width past the left edge */
-    }
-}
-
 .blocks {
     width: 100%;
     height: 100%;
@@ -150,7 +98,7 @@
     /* background: yellowgreen; */
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 1.5rem;
     margin-bottom: 3rem;
 }
 
@@ -163,8 +111,11 @@
 .metric_card {
     display: flex;
     flex-direction: column;
-    grid-column: span 4;
-    gap: 0.75rem;
+    transition: transform 0.4s ease;
+}
+
+.metric_card:hover {
+    transform: scale(0.95);
 }
 
 .container_project_slideshow {

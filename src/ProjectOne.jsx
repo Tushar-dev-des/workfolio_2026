@@ -177,7 +177,7 @@ const ProjectOne = () => {
                     <div className="container_my_role">
                         <div className="my_role">
                             <p style={{ fontWeight: "600", color: "#344054" }}>My role</p>
-                            <p>I owned end-to-end experience design: right from the ideation through execution, from email notifications to edge cases; <br /> along with direct input into product strategy. </p>
+                            <p>I owned end-to-end experience design: right from the ideation through execution, from email notifications to edge cases; <br /> along with shaping and defining product strategy. </p>
                             <p>Qualitative user & product research. Beyond our existing users, I partnered with sales to speak with competitors' users too, who surfaced pain points and mental models we wouldn't have found otherwise.</p>
                             <p>Worked closely with cross-functional teams and stakeholders, both directly and indirectly tied to the project, to keep decisions aligned and execution on track.</p>
                         </div>
