@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { Link, useParams, useNavigate } from 'react-router-dom'
 import './ProjectOne.css'
 import PatternBg from './PatternBg'
@@ -13,6 +13,8 @@ import travelRedesign3 from './assets/travel_redesign_3.webp';
 import travelRedesign4 from './assets/travel_redesign_4.webp';
 import travelRedesign5 from './assets/travel_redesign_5.webp';
 import travelRedesign6 from './assets/travel_redesign_6.webp';
+
+import { useLenis } from "lenis/react";
 
 gsap.registerPlugin(SplitText, useGSAP);
 
@@ -62,6 +64,13 @@ const DEFAULT_SLIDES = [
 ];
 
 const ProjectOne = () => {
+
+
+    const lenis = useLenis();
+
+    useEffect(() => {
+        lenis?.scrollTo(0, { immediate: true });
+    }, [lenis]);
 
     const { id } = useParams()
     const navigate = useNavigate()

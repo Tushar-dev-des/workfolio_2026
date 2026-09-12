@@ -11,6 +11,8 @@ import cleartripAssured1 from './assets/cleartrip_assured_1.webp';
 import cleartripAssured2 from './assets/cleartrip_assured_2.webp';
 import cleartripAssured3 from './assets/cleartrip_assured_3.webp';
 
+import { useLenis } from "lenis/react";
+
 gsap.registerPlugin(SplitText, useGSAP);
 
 const CLEARTRIP_SLIDES = [
@@ -38,6 +40,12 @@ const CLEARTRIP_SLIDES = [
 ];
 
 const ProjectThree = () => {
+
+    const lenis = useLenis();
+
+    useEffect(() => {
+        lenis?.scrollTo(0, { immediate: true });
+    }, [lenis]);
 
     const { id } = useParams()
     const navigate = useNavigate()

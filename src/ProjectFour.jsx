@@ -15,6 +15,8 @@ import gold from './assets/gold.svg'
 import callout from './assets/callout.svg'
 import order_form from './assets/order_form.svg'
 
+import { useLenis } from "lenis/react";
+
 gsap.registerPlugin(SplitText, useGSAP);
 
 const UPSTOX_SLIDES = [
@@ -41,6 +43,12 @@ const UPSTOX_SLIDES = [
 ];
 
 const ProjectFour = () => {
+
+    const lenis = useLenis();
+
+    useEffect(() => {
+        lenis?.scrollTo(0, { immediate: true });
+    }, [lenis]);
 
     const { id } = useParams()
     const navigate = useNavigate()
