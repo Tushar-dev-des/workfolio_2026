@@ -66,7 +66,7 @@ const Projects = () => {
             scrollTrigger: {
                 trigger: ".p1",
                 start: "top 40%",
-                end: "top top",
+                end: "top 10%",
                 scrub: true,
             },
             filter: "blur(12px)",
@@ -76,7 +76,7 @@ const Projects = () => {
             scrollTrigger: {
                 trigger: ".p2",
                 start: "top 40%",
-                end: "top top",
+                end: "top 10%",
                 scrub: true,
             },
             filter: "blur(12px)",
@@ -86,7 +86,7 @@ const Projects = () => {
             scrollTrigger: {
                 trigger: ".p3",
                 start: "top 40%",
-                end: "top top",
+                end: "top 10%",
                 scrub: true,
             },
             filter: "blur(12px)",
@@ -96,7 +96,7 @@ const Projects = () => {
             scrollTrigger: {
                 trigger: ".p4",
                 start: "top 40%",
-                end: "top top",
+                end: "top 10%",
                 scrub: true,
             },
             filter: "blur(12px)",
