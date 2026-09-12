@@ -5,7 +5,7 @@ import PatternBg from './PatternBg'
 import ProjectSlideshow from './Components/ProjectSlideshow'
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { SplitText } from "gsap/all";
+import { SplitText, ScrollTrigger } from "gsap/all";
 import { INTRO_PLAYED_KEY } from './introFlag'
 import cleartripAssured1 from './assets/cleartrip_assured_1.webp';
 import cleartripAssured2 from './assets/cleartrip_assured_2.webp';
@@ -45,6 +45,7 @@ const ProjectThree = () => {
 
     useEffect(() => {
         lenis?.scrollTo(0, { immediate: true });
+        ScrollTrigger.refresh();
     }, [lenis]);
 
     const { id } = useParams()

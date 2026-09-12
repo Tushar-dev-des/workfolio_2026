@@ -29,6 +29,20 @@
     /* transition: transform 0.4s ease; */
 }
 
+.index_container {
+    grid-column: span 3;
+    font-size: 3rem;
+    line-height: 1;
+    color: #344054;
+    display: flex;
+    align-items: baseline;
+}
+
+
+.project:nth-child(even) .index_container {
+    justify-content: flex-end;
+}
+
 
 .project:nth-child(even) .project_content {
     grid-column: 4 / span 9;
