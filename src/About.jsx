@@ -24,8 +24,7 @@ const About = () => {
                 scrub: true,
                 toggleActions: "play none none reverse",
             },
-            background: "#080616",
-
+            background: "linear-gradient(-30deg, #080616 20%, #0f0b28 100%)",
         })
 
         gsap.from('.puzzle_item', {
