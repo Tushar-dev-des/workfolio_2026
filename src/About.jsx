@@ -16,6 +16,18 @@ const About = () => {
 
         const aboutSplit = new SplitText(".about_content", { type: "words" });
 
+        gsap.to('.puzzle_container', {
+            scrollTrigger: {
+                trigger: ".third_fold",
+                start: "top 0%",
+                end: "top -50%",
+                scrub: true,
+                toggleActions: "play none none reverse",
+            },
+            background: "#080616",
+
+        })
+
         gsap.from('.puzzle_item', {
             scrollTrigger: {
                 trigger: ".puzzle_container",
@@ -65,7 +77,7 @@ const About = () => {
                 start: "bottom 110%",
                 toggleActions: "play none none reverse",
             },
-            opacity: 1,
+            opacity: 0.5,
         })
 
         ScrollTrigger.create({
@@ -95,11 +107,12 @@ const About = () => {
             },
             opacity: 0,
             stagger: {
-                each: 0.06,
+                each: 0.05,
                 // from: "random",
             },
-            y: 30,
-            rotation: 15,
+            y: 50,
+            x: 20,
+            rotation: 20,
             filter: "blur(15px)"
         });
 

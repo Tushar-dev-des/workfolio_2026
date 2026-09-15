@@ -107,7 +107,7 @@ const Projects = () => {
             trigger: ".p1",
             start: "top top",
             endTrigger: ".p1 .project_content .desc",
-            end: "top 3%",
+            end: "top 5%",
 
             // end: () => {
             //     const remInPx = parseFloat(getComputedStyle(document.documentElement).fontSize);
@@ -120,7 +120,7 @@ const Projects = () => {
             trigger: ".p2",
             start: "top top",
             endTrigger: ".p2 .project_content .desc",
-            end: "top 3%",
+            end: "top 5%",
             // end: () => {
             //     const remInPx = parseFloat(getComputedStyle(document.documentElement).fontSize);
             //     return `+=${document.querySelector(".p1").offsetHeight - remInPx * 6}`;
@@ -132,7 +132,7 @@ const Projects = () => {
             trigger: ".p3",
             start: "top top",
             endTrigger: ".p3 .project_content .desc",
-            end: "top 3%",
+            end: "top 5%",
             // end: () => {
             //     const remInPx = parseFloat(getComputedStyle(document.documentElement).fontSize);
             //     return `+=${document.querySelector(".p1").offsetHeight - remInPx * 6}`;
@@ -144,7 +144,7 @@ const Projects = () => {
             trigger: ".p4",
             start: "top top",
             endTrigger: ".p4 .project_content .desc",
-            end: "top 3%",
+            end: "top 5%",
             // end: () => {
             //     const remInPx = parseFloat(getComputedStyle(document.documentElement).fontSize);
             //     return `+=${document.querySelector(".p1").offsetHeight - remInPx * 6}`;
@@ -175,13 +175,13 @@ const Projects = () => {
                     </Link>
                     <div className="index_container index_1">
                         <h1 style={{ fontWeight: "300", lineHeight: "1" }}>01</h1>
-                        <p style={{ color: "#e4e7ec", lineHeight: "1" }}>/04</p>
+                        <p style={{ color: "#D0D5DD", lineHeight: "1", fontSize: "1rem" }}>of 4</p>
                     </div>
                 </div>
                 <div className="project p2">
                     <div className="index_container index_2">
                         <h1 style={{ fontWeight: "300", lineHeight: "1" }}>02</h1>
-                        <p style={{ color: "#e4e7ec", lineHeight: "1" }}>/04</p>
+                        {/* <p style={{ color: "#e4e7ec", lineHeight: "1" }}>/04</p> */}
                     </div>
                     <Link to="/projects/2" className="project_content" >
                         <div className="thumbnail">
@@ -203,13 +203,13 @@ const Projects = () => {
                     </Link>
                     <div className="index_container index_3">
                         <h1 style={{ fontWeight: "300", lineHeight: "1" }}>03</h1>
-                        <p style={{ color: "#e4e7ec", lineHeight: "1" }}>/04</p>
+                        {/* <p style={{ color: "#e4e7ec", lineHeight: "1" }}>/04</p> */}
                     </div>
                 </div>
                 <div className="project p4">
                     <div className="index_container index_4">
                         <h1 style={{ fontWeight: "300", lineHeight: "1" }}>04</h1>
-                        <p style={{ color: "#e4e7ec", lineHeight: "1" }}>/04</p>
+                        {/* <p style={{ color: "#e4e7ec", lineHeight: "1" }}>/04</p> */}
                     </div>
                     <Link to="/projects/4" className="project_content" >
                         <div className="thumbnail">

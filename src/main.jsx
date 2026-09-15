@@ -20,7 +20,7 @@ const Root = () => {
 
   return (
     <>
-      <ReactLenis root />
+      <ReactLenis root options={{ lerp: 0.05 }} />
       <ScrollRestoration />
       <Outlet />
       <Footer />
