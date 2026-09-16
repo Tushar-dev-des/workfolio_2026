@@ -70,7 +70,7 @@ const ProjectOne = () => {
 
     useEffect(() => {
         lenis?.scrollTo(0, { immediate: true });
-        // ScrollTrigger.refresh();
+        ScrollTrigger.refresh();
     }, [lenis]);
 
     const { id } = useParams()
