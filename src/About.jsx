@@ -2,11 +2,16 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger, SplitText } from "gsap/all"
 import './About.css'
-import puzzleOne from './assets/puzzle_one.svg'
-import puzzleTwo from './assets/puzzle_two.svg'
-import puzzleThree from './assets/puzzle_three.svg'
-import puzzleFour from './assets/puzzle_four.svg'
-import puzzleFive from './assets/puzzle_five.svg'
+// import puzzleOne from './assets/puzzle_one.svg'
+// import puzzleTwo from './assets/puzzle_two.svg'
+// import puzzleThree from './assets/puzzle_three.svg'
+// import puzzleFour from './assets/puzzle_four.svg'
+// import puzzleFive from './assets/puzzle_five.svg'
+import puzzleOne from './assets/puzzle_one_copy.svg'
+import puzzleTwo from './assets/puzzle_two_copy.svg'
+import puzzleThree from './assets/puzzle_three_copy.svg'
+import puzzleFour from './assets/puzzle_four_copy.svg'
+import puzzleFive from './assets/puzzle_five_copy.svg'
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -16,16 +21,16 @@ const About = () => {
 
         const aboutSplit = new SplitText(".about_content", { type: "words" });
 
-        gsap.to('.puzzle_container', {
-            scrollTrigger: {
-                trigger: ".third_fold",
-                start: "top 0%",
-                end: "top -50%",
-                scrub: true,
-                toggleActions: "play none none reverse",
-            },
-            background: "linear-gradient(-30deg, #080616 20%, #0f0b28 100%)",
-        })
+        // gsap.to('.puzzle_container', {
+        //     scrollTrigger: {
+        //         trigger: ".third_fold",
+        //         start: "top 0%",
+        //         end: "top -60%",
+        //         scrub: true,
+        //         toggleActions: "play none none reverse",
+        //     },
+        //     background: "linear-gradient(-30deg, #080616 20%, #0f0b28 100%)",
+        // })
 
         gsap.from('.puzzle_item', {
             scrollTrigger: {
@@ -76,7 +81,8 @@ const About = () => {
                 start: "bottom 110%",
                 toggleActions: "play none none reverse",
             },
-            opacity: 0.5,
+            opacity: 0.7,
+            // opacity: 0.5,
         })
 
         ScrollTrigger.create({

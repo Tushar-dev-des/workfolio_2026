@@ -52,14 +52,18 @@
 }
 
 .first_line .gradient_title {
-    background: linear-gradient(86deg, #b9c8ff 0%, #597ff7 60%);
+    background: linear-gradient(109.6deg,
+            #00c9d754 11.2%,
+            #DD6CF142 42%,
+            #E56AFDB5 71.5%,
+            #7BB7FDFF 100.2%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 2.5rem;
     line-height: 3rem;
-    letter-spacing: -0.8px;
+    letter-spacing: -1px;
 }
 
 .title,
