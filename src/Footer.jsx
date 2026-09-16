@@ -6,8 +6,6 @@ import { ScrollTrigger } from "gsap/all"
 import './Footer.css'
 import ISTClock from "./Components/ISTClock";
 
-import footer_outro from './assets/footer_outro.svg'
-
 import parallaxImage1 from './assets/parallax_1.png'
 import parallaxImage2 from './assets/parallax_2.png'
 
