@@ -57,6 +57,7 @@ const About = () => {
             y: -200,
             x: 200,
             rotation: -45,
+            filter: "blur(10px)"
         })
 
         gsap.from('.missing_item_two', {
@@ -72,6 +73,7 @@ const About = () => {
             y: 200,
             x: 200,
             rotation: 45,
+            filter: "blur(10px)"
         })
 
         gsap.to('.puzzle', {
@@ -151,11 +153,11 @@ const About = () => {
                     <div className="about_content">
                         {/* <br />
                         <br /> */}
-                        As a keen observer, I've developed & practised my own way of approaching problems.
+                        Over the years, I've developed & practised my own way of approaching problems.
                     </div>
                     {/* <div className="about_content" style={{ textAlign: 'left', maxWidth: '80%', alignSelf: 'flex-end' }}> */}
                     <div className="about_content">
-                        I see them as a crucial moment inside an unfinished story; <br /> the user being already present at that moment, and our job now is to complete that story as seamlessly and effortlessly as possible, <br /> by connecting the right dots.
+                        I see them as a crucial moment inside an unfinished story; <br /> the user being already present at that moment, and our job now is to complete their story as seamlessly and effortlessly as possible, <br /> by connecting the right dots.
                     </div>
                     {/* <div className="about_content action">Read my complete approach</div> */}
                 </div>
