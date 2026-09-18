@@ -6,6 +6,8 @@ import { ScrollTrigger } from "gsap/all"
 import './Footer.css'
 import ISTClock from "./Components/ISTClock";
 
+// import emailIcon from "./assets/email.svg"
+
 import parallaxImage1 from './assets/parallax_1.png'
 import parallaxImage2 from './assets/parallax_2.png'
 
@@ -106,11 +108,12 @@ const Footer = () => {
                         {/* <p>tusharxmahajan@gmail.com</p> */}
                         <div className="footer_socials_container">
                             <div className='demo'>
-                                <p>Drop me an email</p>
+                                <p>© 2026</p>
+                                {/* <img src={emailIcon} alt="" style={{ objectFit: "contain", height: "1.5rem", width: "1.5rem", opacity: "0.6" }} /> */}
                                 <p>tusharxmahajan@gmail.com</p>
                             </div>
                             <div className='demo'>
-                                <p>Elsewhere</p>
+                                <p>/</p>
                                 <div className='social_links'>
                                     <p onClick={() => window.open("https://www.linkedin.com/in/tusharxmahajan/", "_blank")} style={{ cursor: "pointer" }}>LinkedIn</p>
                                     <p>Github</p>
