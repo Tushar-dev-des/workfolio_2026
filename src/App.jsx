@@ -44,7 +44,7 @@ function App() {
         duration: 1.5,
         opacity: 0,
         filter: "blur(12px)",
-      })
+      }, "-=1")
       .from(heroSplit.chars, {
         y: 20,
         duration: 1.5,
@@ -52,18 +52,12 @@ function App() {
         opacity: 0,
         filter: "blur(12px)",
       }, "-=0.5")
-      .from(".subtitle_container div", {
+      .from(".subtitle_container", {
         opacity: 0,
         y: 20,
         duration: 1.5,
-        stagger: 0.2,
         filter: "blur(12px)",
-      }, "-=1")
-    // .from(".projects_container", {
-    //   yPercent: 50,
-    //   opacity: 0,
-    //   duration: 1.5,
-    // }, "-=1.5");
+      }, "-=1.5")
 
   }, [])
 

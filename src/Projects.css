@@ -26,6 +26,7 @@
     grid-column: 1 / span 9;
     text-decoration: none;
     color: inherit;
+    grid-column: 4 / span 9;
     /* transition: transform 0.4s ease; */
 }
 
@@ -35,7 +36,8 @@
     line-height: 1;
     color: #344054;
     display: flex;
-    align-items: baseline;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .index_container h1 {
@@ -44,14 +46,15 @@
 }
 
 
-.project:nth-child(even) .index_container {
+/* .project:nth-child(even) .index_container {
     justify-content: flex-end;
 }
 
 
 .project:nth-child(even) .project_content {
     grid-column: 4 / span 9;
-}
+} */
+
 
 .project .thumbnail {
     width: 100%;
@@ -73,7 +76,7 @@
 .desc h3 {
     font-size: 1rem;
     line-height: 1.5rem;
-    font-weight: 500;
+    font-weight: 600;
     color: #344054;
     text-decoration: none;
 }

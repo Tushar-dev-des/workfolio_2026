@@ -80,11 +80,12 @@ const About = () => {
 
             scrollTrigger: {
                 trigger: ".third_fold",
-                start: "bottom 110%",
+                start: "bottom 120%",
                 toggleActions: "play none none reverse",
             },
             opacity: 0.7,
-            // opacity: 0.5,
+            ease: "none",
+            duration: 0.2,
         })
 
         ScrollTrigger.create({
