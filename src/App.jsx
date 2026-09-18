@@ -41,13 +41,13 @@ function App() {
     })
       .from(".first_line h1", {
         y: 20,
-        duration: 1.5,
+        duration: 2,
         opacity: 0,
         filter: "blur(12px)",
       }, "-=1")
       .from(heroSplit.chars, {
         y: 20,
-        duration: 1.5,
+        duration: 2,
         stagger: 0.02,
         opacity: 0,
         filter: "blur(12px)",
@@ -55,9 +55,9 @@ function App() {
       .from(".subtitle_container", {
         opacity: 0,
         y: 20,
-        duration: 1.5,
+        duration: 2,
         filter: "blur(12px)",
-      }, "-=1.5")
+      }, "-=2")
 
   }, [])
 

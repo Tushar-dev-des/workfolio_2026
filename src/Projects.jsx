@@ -204,9 +204,9 @@ const Projects = () => {
             <div className="projects">
                 <div className="project p1">
                     <div className="index_container index_1">
-                        <h1 style={{ fontWeight: "200", lineHeight: "1", paddingLeft: "0.75rem" }}>01</h1>
+                        <h1 style={{ fontWeight: "200", lineHeight: "1", marginLeft: "1.25rem" }}>01</h1>
                         <div className="desc">
-                            <h3>DICE Travel: Business travel experience, but a seamless one.</h3>
+                            <h3>DICE Travel : <br /> <span style={{ fontWeight: "300" }}>Business travel experience, but a seamless one.</span></h3>
                             {/* <p>Legacy systems offered rigid workflows, clunky interfaces and an overall fragmented ux. <br /> We designed one, that the business travellers actually needed.</p> */}
                         </div>
                     </div>
@@ -217,9 +217,9 @@ const Projects = () => {
                 </div>
                 <div className="project p2">
                     <div className="index_container index_2">
-                        <h1 style={{ fontWeight: "200", lineHeight: "1", paddingLeft: "0.75rem" }}>02</h1>
+                        <h1 style={{ fontWeight: "200", lineHeight: "1", marginLeft: "1.25rem" }}>02</h1>
                         <div className="desc">
-                            <h3>Designing <span className='atlas_ai'>Atlas</span> : an AI beyond the usual copilots; for the enterprises</h3>
+                            <h3>Designing <span className='atlas_ai'>Atlas</span>  : <br /> <span style={{ fontWeight: "300" }}>an AI beyond the usual copilots; for the enterprises</span></h3>
                             {/* <p>Atlas is an AI experience across the Dice suite, for the complex world of enterprise finances, <br /> that bridges the gap between information, insight, and action.</p> */}
                         </div>
                     </div>
@@ -231,9 +231,9 @@ const Projects = () => {
                 </div>
                 <div className="project p3">
                     <div className="index_container index_3">
-                        <h1 style={{ fontWeight: "200", lineHeight: "1", paddingLeft: "0.75rem" }}>03</h1>
+                        <h1 style={{ fontWeight: "200", lineHeight: "1", marginLeft: "1.25rem" }}>03</h1>
                         <div className="desc">
-                            <h3>Cleartrip Assured: Better choices for corporate stays</h3>
+                            <h3>Cleartrip Assured : <br /> <span style={{ fontWeight: "300" }}>Better choices for corporate stays</span></h3>
                             {/* <p>It was difficult for business travellers to find the best stays for their trips; <br /> Cleartrip assured is a curated collection of stays, handpicked & best-suited for them.</p> */}
                         </div>
                     </div>
@@ -243,9 +243,9 @@ const Projects = () => {
 
                     </Link>
                 </div>
-                <div className="project p4">
+                <div className="project p4" style={{ borderBottom: "1px solid #11111010" }}>
                     <div className="index_container index_4">
-                        <h1 style={{ fontWeight: "200", lineHeight: "1", paddingLeft: "0.75rem" }}>04</h1>
+                        <h1 style={{ fontWeight: "200", lineHeight: "1", marginLeft: "1.25rem" }}>04</h1>
                         <div className="desc">
                             <h3>The Upstox files</h3>
                             {/* <p>A collection of all of my work when I was at upstox</p> */}
