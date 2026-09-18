@@ -25,12 +25,13 @@ function FirstFold() {
         gsap.from('.title_div, .runner_div_container', {
             scrollTrigger: {
                 trigger: ".projects_title_container",
-                start: "top 95%",
-                end: "top 50%",
+                start: "top 90%",
+                end: "top 45%",
                 scrub: true,
             },
-            opacity: 0.16,
+            opacity: 0,
             filter: "blur(4px)",
+            y: 60,
         })
     }, [])
 
