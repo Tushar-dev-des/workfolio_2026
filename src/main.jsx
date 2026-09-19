@@ -14,13 +14,12 @@ import { createBrowserRouter, RouterProvider, Outlet, ScrollRestoration } from '
 const Root = () => {
 
   const lenis = useLenis((lenis) => {
-    // called every scroll
     console.log(lenis)
   })
 
   return (
     <>
-      <ReactLenis root options={{ lerp: 0.07 }} />
+      <ReactLenis root options={{ lerp: 0.07, wheelMultiplier: 0.4 }} />
       <ScrollRestoration />
       <Outlet />
       <Footer />

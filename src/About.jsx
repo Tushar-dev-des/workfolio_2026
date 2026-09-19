@@ -158,7 +158,7 @@ const About = () => {
                     </div>
                     {/* <div className="about_content" style={{ textAlign: 'left', maxWidth: '80%', alignSelf: 'flex-end' }}> */}
                     <div className="about_content">
-                        I see them as a crucial moment inside an unfinished story; <br /> the user being already present at that moment, and our job now is to complete their story as seamlessly and effortlessly as possible, <br /> by connecting the right dots.
+                        I see them as a crucial moment inside an unfinished story, <br /> at the centre along with the user, and our job now is to complete their story as seamlessly and effortlessly as possible, <br /> by connecting the right dots.
                     </div>
                     {/* <div className="about_content action">Read my complete approach</div> */}
                 </div>
