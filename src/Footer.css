@@ -4,6 +4,12 @@
     border-top: 1px solid #e4e7ec;
 } */
 
+@property --gradient-angle {
+    syntax: '<angle>';
+    initial-value: 109.6deg;
+    inherits: false;
+}
+
 .static_footer_container {
     height: 75vh;
     overflow: hidden;
@@ -11,8 +17,21 @@
     /* background-image: radial-gradient(circle 150rem at 8.6% 27.9%, rgba(62, 147, 252, 0.57) 12.9%, rgba(239, 183, 192, 0.44) 91.2%); */
     /* background-image: linear-gradient(89.5deg, rgba(131, 204, 255, 1) 0.4%, rgba(66, 144, 251, 1) 100.3%); */
     /* background-image: linear-gradient(58.2deg, rgba(40, 91, 212, 0.73) -3%, rgba(171, 53, 163, 0.45) 49.3%, rgba(255, 204, 112, 0.37) 97.7%); */
-    background-image: linear-gradient(109.6deg, rgba(112, 246, 255, 0.33) 11.2%, rgba(221, 108, 241, 0.26) 42%, rgba(229, 106, 253, 0.71) 71.5%, rgba(123, 183, 253, 1) 100.2%);
     /* background-image: radial-gradient(circle 150rem at -2.9% 12.9%, rgba(247, 234, 163, 1) 0%, rgba(236, 180, 238, 0.56) 46.4%, rgba(163, 203, 247, 1) 100.7%); */
+    /* background-image: linear-gradient(109.6deg, rgba(112, 246, 255, 0.33) 11.2%, rgba(221, 108, 241, 0.26) 42%, rgba(229, 106, 253, 0.71) 71.5%, rgba(123, 183, 253, 1) 100.2%); */
+    background-image: linear-gradient(var(--gradient-angle),
+            rgba(112, 246, 255, 0.33) 11.2%,
+            rgba(221, 108, 241, 0.26) 42%,
+            rgba(229, 106, 253, 0.71) 71.5%,
+            rgba(123, 183, 253, 1) 100.2%);
+    animation: rotateGradient 75s linear infinite;
+}
+
+@keyframes rotateGradient {
+    to {
+        --gradient-angle: 469.6deg;
+        /* 360deg + starting angle, for a full loop */
+    }
 }
 
 .static_footer {
@@ -21,6 +40,17 @@
     max-width: 1512px;
     padding: 0 2.5rem;
     margin: 0 auto;
+    position: relative;
+}
+
+.gradient_video {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
 .footer_content {

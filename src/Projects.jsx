@@ -164,49 +164,58 @@ const Projects = () => {
         // });
 
 
-        ScrollTrigger.create({
-            trigger: ".p1",
-            start: "top top",
-            endTrigger: ".p1 .project_content .thumbnail",
-            end: "bottom 20%",
-            pin: ".index_1",
-            pinSpacing: false,
-        })
-        ScrollTrigger.create({
-            trigger: ".p2",
-            start: "top top",
-            endTrigger: ".p2 .project_content .thumbnail",
-            end: "bottom 20%",
-            pin: ".index_2",
-            pinSpacing: false,
-        })
+        // ScrollTrigger.create({
+        //     trigger: ".p1",
+        //     start: "top top",
+        //     endTrigger: ".p1 .project_content .thumbnail",
+        //     end: "bottom 36%",
+        //     pin: ".index_1",
+        //     pinSpacing: false,
+        // })
+        // ScrollTrigger.create({
+        //     trigger: ".p2",
+        //     start: "top top",
+        //     endTrigger: ".p2 .project_content .thumbnail",
+        //     end: "bottom 36%",
+        //     pin: ".index_2",
+        //     pinSpacing: false,
+        // })
 
-        ScrollTrigger.create({
-            trigger: ".p3",
-            start: "top top",
-            endTrigger: ".p3 .project_content .thumbnail",
-            end: "bottom 20%",
-            pin: ".index_3",
-            pinSpacing: false,
-        })
+        // ScrollTrigger.create({
+        //     trigger: ".p3",
+        //     start: "top top",
+        //     endTrigger: ".p3 .project_content .thumbnail",
+        //     end: "bottom 32%",
+        //     pin: ".index_3",
+        //     pinSpacing: false,
+        // })
 
-        ScrollTrigger.create({
-            trigger: ".p4",
-            start: "top top",
-            endTrigger: ".p4 .project_content .thumbnail",
-            end: "bottom 20%",
-            pin: ".index_4",
-            pinSpacing: false,
-        })
+        // ScrollTrigger.create({
+        //     trigger: ".p4",
+        //     start: "top top",
+        //     endTrigger: ".p4 .project_content .thumbnail",
+        //     end: "bottom 32%",
+        //     pin: ".index_4",
+        //     pinSpacing: false,
+        // })
     }, [])
     return (
         <div className='projects_container'>
             <div className="projects">
                 <div className="project p1">
                     <div className="index_container index_1">
+                        <div className="highlight"></div>
                         <h1 style={{ fontWeight: "200", lineHeight: "1", marginLeft: "1.25rem" }}>01</h1>
-                        <div className="desc">
+                        <div className="desc" style={{ borderBottom: "1px solid #11111010", paddingBottom: "1rem" }}>
                             <h3>DICE Travel : <br /> <span style={{ fontWeight: "300" }}>Business travel experience, but a seamless one.</span></h3>
+                            {/* <p>Legacy systems offered rigid workflows, clunky interfaces and an overall fragmented ux. <br /> We designed one, that the business travellers actually needed.</p> */}
+                        </div>
+                        <div className="desc">
+                            <h3>2.5x <br /> <span style={{ fontWeight: "300", color: "#344054" }}>total flight bookings</span></h3>
+                            {/* <p>Legacy systems offered rigid workflows, clunky interfaces and an overall fragmented ux. <br /> We designed one, that the business travellers actually needed.</p> */}
+                        </div>
+                        <div className="desc">
+                            <h3 >drove expansion<br /> <span style={{ fontWeight: "300", color: "#344054" }}>product attracted major acquisitions</span></h3>
                             {/* <p>Legacy systems offered rigid workflows, clunky interfaces and an overall fragmented ux. <br /> We designed one, that the business travellers actually needed.</p> */}
                         </div>
                     </div>
@@ -217,10 +226,13 @@ const Projects = () => {
                 </div>
                 <div className="project p2">
                     <div className="index_container index_2">
+                        <div className="highlight"></div>
                         <h1 style={{ fontWeight: "200", lineHeight: "1", marginLeft: "1.25rem" }}>02</h1>
-                        <div className="desc">
+                        <div className="desc" style={{ borderBottom: "1px solid #11111010", paddingBottom: "1rem" }}>
                             <h3>Designing <span className='atlas_ai'>Atlas</span>  : <br /> <span style={{ fontWeight: "300" }}>an AI beyond the usual copilots; for the enterprises</span></h3>
-                            {/* <p>Atlas is an AI experience across the Dice suite, for the complex world of enterprise finances, <br /> that bridges the gap between information, insight, and action.</p> */}
+                        </div>
+                        <div className="desc">
+                            <h3 ><span style={{ fontWeight: "300", color: "#344054" }}>Atlas is an AI experience across the Dice suite, for the complex world of enterprise finances, <br /> that bridges the gap between information, insight, and action.</span></h3>
                         </div>
                     </div>
                     <Link to="/projects/2" className="project_content" >
@@ -231,10 +243,19 @@ const Projects = () => {
                 </div>
                 <div className="project p3">
                     <div className="index_container index_3">
+                        <div className="highlight"></div>
                         <h1 style={{ fontWeight: "200", lineHeight: "1", marginLeft: "1.25rem" }}>03</h1>
-                        <div className="desc">
+                        <div className="desc" style={{ borderBottom: "1px solid #11111010", paddingBottom: "1rem" }}>
                             <h3>Cleartrip Assured : <br /> <span style={{ fontWeight: "300" }}>Better choices for corporate stays</span></h3>
                             {/* <p>It was difficult for business travellers to find the best stays for their trips; <br /> Cleartrip assured is a curated collection of stays, handpicked & best-suited for them.</p> */}
+                        </div>
+                        <div className="desc">
+                            <h3 >89%<br /> <span style={{ fontWeight: "300", color: "#344054" }}>selection rate</span></h3>
+                            {/* <p>Legacy systems offered rigid workflows, clunky interfaces and an overall fragmented ux. <br /> We designed one, that the business travellers actually needed.</p> */}
+                        </div>
+                        <div className="desc">
+                            <h3 >₹24 lacs <br /> <span style={{ fontWeight: "300", color: "#344054" }}>saved in missed GST claims</span></h3>
+                            {/* <p>Legacy systems offered rigid workflows, clunky interfaces and an overall fragmented ux. <br /> We designed one, that the business travellers actually needed.</p> */}
                         </div>
                     </div>
                     <Link to="/projects/3" className="project_content">
@@ -245,10 +266,23 @@ const Projects = () => {
                 </div>
                 <div className="project p4" style={{ borderBottom: "1px solid #11111010" }}>
                     <div className="index_container index_4">
+                        <div className="highlight"></div>
                         <h1 style={{ fontWeight: "200", lineHeight: "1", marginLeft: "1.25rem" }}>04</h1>
-                        <div className="desc">
-                            <h3>The Upstox files</h3>
+                        <div className="desc" style={{ borderBottom: "1px solid #11111010", paddingBottom: "1rem" }}>
+                            <h3>My work at Upstox : <br /> <span style={{ fontWeight: "300" }}>Gold investment, Order forms, corporate actions</span></h3>
                             {/* <p>A collection of all of my work when I was at upstox</p> */}
+                        </div>
+                        <div className="desc">
+                            <h3 >expansion <br /> <span style={{ fontWeight: "300", color: "#344054" }}>to new user segment and asset class</span></h3>
+                            {/* <p>Legacy systems offered rigid workflows, clunky interfaces and an overall fragmented ux. <br /> We designed one, that the business travellers actually needed.</p> */}
+                        </div>
+                        <div className="desc">
+                            <h3 >reduced drop-offs<br /> <span style={{ fontWeight: "300", color: "#344054" }}>at stock buying order forms</span></h3>
+                            {/* <p>Legacy systems offered rigid workflows, clunky interfaces and an overall fragmented ux. <br /> We designed one, that the business travellers actually needed.</p> */}
+                        </div>
+                        <div className="desc">
+                            <h3 >improved discovery<br /> <span style={{ fontWeight: "300", color: "#344054" }}>of corporate action announcements</span></h3>
+                            {/* <p>Legacy systems offered rigid workflows, clunky interfaces and an overall fragmented ux. <br /> We designed one, that the business travellers actually needed.</p> */}
                         </div>
                     </div>
                     <Link to="/projects/4" className="project_content" >

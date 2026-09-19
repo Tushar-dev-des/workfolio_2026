@@ -8,6 +8,8 @@ import ISTClock from "./Components/ISTClock";
 
 // import emailIcon from "./assets/email.svg"
 
+// import footerBgGradient from "./assets/footer_bg_gradient.mp4"
+
 import parallaxImage1 from './assets/parallax_1.png'
 import parallaxImage2 from './assets/parallax_2.png'
 
@@ -99,6 +101,7 @@ const Footer = () => {
 
         <div className="static_footer_container">
             <div className="static_footer">
+                {/* <video className="gradient_video" src={footerBgGradient} autoPlay loop playsInline muted /> */}
                 <div className='footer_content'>
                     <div className="footer_title">
                         {/* <p>like the vibe?</p> */}
