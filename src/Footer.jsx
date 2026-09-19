@@ -113,7 +113,7 @@ const Footer = () => {
                                 <p>tusharxmahajan@gmail.com</p>
                             </div>
                             <div className='demo'>
-                                <p>/</p>
+                                <p>Elsewhere</p>
                                 <div className='social_links'>
                                     <p onClick={() => window.open("https://www.linkedin.com/in/tusharxmahajan/", "_blank")} style={{ cursor: "pointer" }}>LinkedIn</p>
                                     <p>Github</p>

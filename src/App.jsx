@@ -1,5 +1,6 @@
 import './App.css'
 import FirstFold from './FirstFold'
+// import Showreel from './Showreel'
 import SelectedWorkHeader from './SelectedWorkHeader'
 import Projects from './Projects'
 import PatternBg from './PatternBg'
@@ -68,6 +69,7 @@ function App() {
         <Analytics />
         <PatternBg />
         <FirstFold />
+        {/* <Showreel /> */}
         <SelectedWorkHeader />
         <Projects />
         <About />
