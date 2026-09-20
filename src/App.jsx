@@ -53,7 +53,7 @@ function App() {
         stagger: 0.02,
         opacity: 0,
         filter: "blur(12px)",
-      }, "-=0.5")
+      }, "-=1.25")
       .from(".subtitle_container", {
         opacity: 0,
         y: 20,

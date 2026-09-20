@@ -157,10 +157,7 @@ const ProjectOne = () => {
                                     </div>
                                     <div className="metric_card">
                                         <div>
-                                            <h1>churn <span style={{
-                                                fontSize: '2.75rem',
-                                                lineHeight: "1",
-                                            }}>🚫</span></h1>
+                                            <h1 style={{ textDecoration: "line-through", textDecorationThickness: "0.25rem", textDecorationColor: "#BF9A66" }}>churn</h1>
                                             <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
                                                 <h1 style={{
                                                     background: "linear-gradient(86deg, #BF9A66 0%, #ECC890 60%)",
@@ -168,10 +165,6 @@ const ProjectOne = () => {
                                                     backgroundClip: "text",
                                                     color: "transparent",
                                                 }}>growth</h1>
-                                                <span style={{
-                                                    fontSize: '2.75rem', background: "fff",
-                                                    lineHeight: "1",
-                                                }}>✅</span>
                                             </div>
                                         </div>
                                         <p>grabbed attention of big names</p>
