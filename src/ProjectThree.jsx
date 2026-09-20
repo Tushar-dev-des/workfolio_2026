@@ -110,7 +110,7 @@ const ProjectThree = () => {
                     </div>
                     <div className="container_tldr">
                         <div className="tldr">
-                            <p>tl;dr (45d post release)</p>
+                            <p>90 days post release</p>
                             <div className="container_metrics">
                                 <div className="metrics_row">
                                     <div className="metric_card">
@@ -122,7 +122,7 @@ const ProjectThree = () => {
                                         <p>increase in total stay bookings</p>
                                     </div>
                                     <div className="metric_card">
-                                        <h1>~₹24 lacs</h1>
+                                        <h1>&lt; ₹1.2 Cr</h1>
                                         <p>saved in previously missed GST claims</p>
                                     </div>
 

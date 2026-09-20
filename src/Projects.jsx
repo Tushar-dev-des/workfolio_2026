@@ -211,7 +211,8 @@ const Projects = () => {
                             {/* <p>Legacy systems offered rigid workflows, clunky interfaces and an overall fragmented ux. <br /> We designed one, that the business travellers actually needed.</p> */}
                         </div>
                         <div className="desc">
-                            <h3>2.5x <br /> <span style={{ fontWeight: "300", color: "#344054" }}>total flight bookings</span></h3>
+                            {/* <h3 >2.5x  <span style={{ fontWeight: "300", color: "#344054" }}> • 45 days <br />total flight bookings</span></h3> */}
+                            <h3 >2.5x  <br /><span style={{ fontWeight: "300", color: "#344054" }}> total flight bookings <br /> in 45 days</span></h3>
                             {/* <p>Legacy systems offered rigid workflows, clunky interfaces and an overall fragmented ux. <br /> We designed one, that the business travellers actually needed.</p> */}
                         </div>
                         <div className="desc">
@@ -232,7 +233,7 @@ const Projects = () => {
                             <h3>Designing <span className='atlas_ai'>Atlas</span>  : <br /> <span style={{ fontWeight: "300" }}>an AI beyond the usual copilots; for the enterprises</span></h3>
                         </div>
                         <div className="desc">
-                            <h3 ><span style={{ fontWeight: "300", color: "#344054" }}>Atlas is an AI experience across the Dice suite, for the complex world of enterprise finances, <br /> that bridges the gap between information, insight, and action.</span></h3>
+                            <h3 ><span style={{ fontWeight: "300", color: "#344054" }}>&quot; Atlas is an AI experience across the Dice suite, for the complex world of enterprise finances, <br /> that bridges the gap between information, insight, and action. &quot;</span></h3>
                         </div>
                     </div>
                     <Link to="/projects/2" className="project_content" >
@@ -254,7 +255,7 @@ const Projects = () => {
                             {/* <p>Legacy systems offered rigid workflows, clunky interfaces and an overall fragmented ux. <br /> We designed one, that the business travellers actually needed.</p> */}
                         </div>
                         <div className="desc">
-                            <h3 >₹24 lacs <br /> <span style={{ fontWeight: "300", color: "#344054" }}>saved in missed GST claims</span></h3>
+                            <h3 >&lt; ₹1.2 Cr <br /><span style={{ fontWeight: "300", color: "#344054" }}>saved in missed GST claims <br /> each Quarter</span></h3>
                             {/* <p>Legacy systems offered rigid workflows, clunky interfaces and an overall fragmented ux. <br /> We designed one, that the business travellers actually needed.</p> */}
                         </div>
                     </div>
@@ -264,7 +265,7 @@ const Projects = () => {
 
                     </Link>
                 </div>
-                <div className="project p4" style={{ borderBottom: "1px solid #11111010" }}>
+                <div className="project p4">
                     <div className="index_container index_4">
                         <div className="highlight"></div>
                         <h1 style={{ fontWeight: "200", lineHeight: "1", marginLeft: "1.25rem" }}>04</h1>
@@ -289,6 +290,10 @@ const Projects = () => {
                         <div className="thumbnail">
                         </div>
                     </Link>
+                </div>
+                <div className="project" style={{ height: "9.5rem", background: "#fdf9f6", marginTop: "-4rem", border: "1px solid #11111010" }}>
+                    <div style={{ backgroundColor: "#11111004", gridColumn: "1 / span 3", marginRight: "-2.5rem", borderRight: "1px solid #11111010" }}></div>
+
                 </div>
 
             </div>

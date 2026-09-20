@@ -35,7 +35,7 @@ const About = () => {
         gsap.from('.puzzle_item', {
             scrollTrigger: {
                 trigger: ".puzzle_container",
-                start: "top 0%",
+                start: "top 20%",
                 end: "top -150%",
                 scrub: true,
             },

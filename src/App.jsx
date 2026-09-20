@@ -39,7 +39,7 @@ function App() {
       yPercent: -100,
       duration: 2,
       ease: "power4.inOut",
-      opacity: 0.6,
+      opacity: 0.4,
     })
       .from(".first_line h1", {
         y: 20,
