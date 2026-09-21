@@ -4,6 +4,8 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all"
 
+import project_one_video from "./assets/project_one.mp4"
+
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 
@@ -205,31 +207,34 @@ const Projects = () => {
                 <div className="project p1">
                     <div className="index_container index_1">
                         <div className="highlight"></div>
-                        <h1 style={{ fontWeight: "200", lineHeight: "1", marginLeft: "1.25rem" }}>01</h1>
-                        <div className="desc" style={{ borderBottom: "1px solid #11111010", paddingBottom: "1rem" }}>
+                        {/* <h1 style={{ fontWeight: "200", lineHeight: "1", marginLeft: "1.25rem" }}>01</h1> */}
+                        <div className="desc" style={{ borderBottom: "1px solid #11111010", padding: "2rem 0" }}>
                             <h3>DICE Travel : <br /> <span style={{ fontWeight: "300" }}>Business travel experience, but a seamless one.</span></h3>
-                            {/* <p>Legacy systems offered rigid workflows, clunky interfaces and an overall fragmented ux. <br /> We designed one, that the business travellers actually needed.</p> */}
                         </div>
                         <div className="desc">
-                            {/* <h3 >2.5x  <span style={{ fontWeight: "300", color: "#344054" }}> • 45 days <br />total flight bookings</span></h3> */}
-                            <h3 >2.5x  <br /><span style={{ fontWeight: "300", color: "#344054" }}> total flight bookings <br /> in 45 days</span></h3>
-                            {/* <p>Legacy systems offered rigid workflows, clunky interfaces and an overall fragmented ux. <br /> We designed one, that the business travellers actually needed.</p> */}
+                            <h1 >2.5x</h1>
+                            <h3 style={{ fontWeight: "300", lineHeight: "1.5" }}>total flight bookings</h3>
+                            <h3 style={{ fontWeight: "300", lineHeight: "1.5" }}>in 45 days</h3>
                         </div>
+                        {/* <div className="desc">
+                            <h1 >drove expansion</h1>
+                            <h3 style={{ fontWeight: "300", lineHeight: "1.5" }}>product attracted major acquisitions</h3>
+                        </div> */}
                         <div className="desc">
                             <h3 >drove expansion<br /> <span style={{ fontWeight: "300", color: "#344054" }}>product attracted major acquisitions</span></h3>
-                            {/* <p>Legacy systems offered rigid workflows, clunky interfaces and an overall fragmented ux. <br /> We designed one, that the business travellers actually needed.</p> */}
                         </div>
                     </div>
                     <Link to="/projects/1" className="project_content" >
                         <div className="thumbnail">
+                            <video src={project_one_video} autoPlay loop playsInline muted className="project_one_video"></video>
                         </div>
                     </Link>
                 </div>
                 <div className="project p2">
                     <div className="index_container index_2">
                         <div className="highlight"></div>
-                        <h1 style={{ fontWeight: "200", lineHeight: "1", marginLeft: "1.25rem" }}>02</h1>
-                        <div className="desc" style={{ borderBottom: "1px solid #11111010", paddingBottom: "1rem" }}>
+                        {/* <h1 style={{ fontWeight: "200", lineHeight: "1", marginLeft: "1.25rem" }}>02</h1> */}
+                        <div className="desc" style={{ borderBottom: "1px solid #11111010", padding: "2rem 0" }}>
                             <h3>Designing <span className='atlas_ai'>Atlas</span>  : <br /> <span style={{ fontWeight: "300" }}>an AI beyond the usual copilots; for the enterprises</span></h3>
                         </div>
                         <div className="desc">
@@ -245,18 +250,18 @@ const Projects = () => {
                 <div className="project p3">
                     <div className="index_container index_3">
                         <div className="highlight"></div>
-                        <h1 style={{ fontWeight: "200", lineHeight: "1", marginLeft: "1.25rem" }}>03</h1>
-                        <div className="desc" style={{ borderBottom: "1px solid #11111010", paddingBottom: "1rem" }}>
+                        {/* <h1 style={{ fontWeight: "200", lineHeight: "1", marginLeft: "1.25rem" }}>03</h1> */}
+                        <div className="desc" style={{ borderBottom: "1px solid #11111010", padding: "2rem 0" }}>
                             <h3>Cleartrip Assured : <br /> <span style={{ fontWeight: "300" }}>Better choices for corporate stays</span></h3>
-                            {/* <p>It was difficult for business travellers to find the best stays for their trips; <br /> Cleartrip assured is a curated collection of stays, handpicked & best-suited for them.</p> */}
                         </div>
                         <div className="desc">
-                            <h3 >89%<br /> <span style={{ fontWeight: "300", color: "#344054" }}>selection rate</span></h3>
-                            {/* <p>Legacy systems offered rigid workflows, clunky interfaces and an overall fragmented ux. <br /> We designed one, that the business travellers actually needed.</p> */}
+                            <h1 >89%</h1>
+                            <h3 style={{ fontWeight: "300", lineHeight: "1.5" }}>selection rate</h3>
                         </div>
                         <div className="desc">
-                            <h3 >&lt; ₹1.2 Cr <br /><span style={{ fontWeight: "300", color: "#344054" }}>saved in missed GST claims <br /> each Quarter</span></h3>
-                            {/* <p>Legacy systems offered rigid workflows, clunky interfaces and an overall fragmented ux. <br /> We designed one, that the business travellers actually needed.</p> */}
+                            <h1 >₹1.2 Cr</h1>
+                            <h3 style={{ fontWeight: "300", lineHeight: "1.5" }}>saved in missed GST claims</h3>
+                            <h3 style={{ fontWeight: "300", lineHeight: "1.5" }}>each Quarter</h3>
                         </div>
                     </div>
                     <Link to="/projects/3" className="project_content">
@@ -268,22 +273,18 @@ const Projects = () => {
                 <div className="project p4">
                     <div className="index_container index_4">
                         <div className="highlight"></div>
-                        <h1 style={{ fontWeight: "200", lineHeight: "1", marginLeft: "1.25rem" }}>04</h1>
-                        <div className="desc" style={{ borderBottom: "1px solid #11111010", paddingBottom: "1rem" }}>
+                        {/* <h1 style={{ fontWeight: "200", lineHeight: "1", marginLeft: "1.25rem" }}>04</h1> */}
+                        <div className="desc" style={{ borderBottom: "1px solid #11111010", padding: "2rem 0" }}>
                             <h3>My work at Upstox : <br /> <span style={{ fontWeight: "300" }}>Gold investment, Order forms, corporate actions</span></h3>
-                            {/* <p>A collection of all of my work when I was at upstox</p> */}
                         </div>
                         <div className="desc">
                             <h3 >expansion <br /> <span style={{ fontWeight: "300", color: "#344054" }}>to new user segment and asset class</span></h3>
-                            {/* <p>Legacy systems offered rigid workflows, clunky interfaces and an overall fragmented ux. <br /> We designed one, that the business travellers actually needed.</p> */}
                         </div>
                         <div className="desc">
                             <h3 >reduced drop-offs<br /> <span style={{ fontWeight: "300", color: "#344054" }}>at stock buying order forms</span></h3>
-                            {/* <p>Legacy systems offered rigid workflows, clunky interfaces and an overall fragmented ux. <br /> We designed one, that the business travellers actually needed.</p> */}
                         </div>
                         <div className="desc">
                             <h3 >improved discovery<br /> <span style={{ fontWeight: "300", color: "#344054" }}>of corporate action announcements</span></h3>
-                            {/* <p>Legacy systems offered rigid workflows, clunky interfaces and an overall fragmented ux. <br /> We designed one, that the business travellers actually needed.</p> */}
                         </div>
                     </div>
                     <Link to="/projects/4" className="project_content" >

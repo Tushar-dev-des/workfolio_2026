@@ -87,6 +87,7 @@
     width: max-content;
     /* lets the row size to its actual content, not the container */
     animation: marquee 42s linear infinite;
+    opacity: 0.6;
 }
 
 /* the wrapper needs to lay both .logo_row sets side by side */
