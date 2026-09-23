@@ -1,4 +1,6 @@
 .first_fold {
+    --title-weight: 300;
+    --title-weight-inverse: 500;
     width: 100%;
     height: 88vh;
     padding: 2.5rem 2.5rem 2.5rem 2.5rem;
@@ -30,6 +32,7 @@
 }
 
 .hero_container {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -48,12 +51,13 @@
 
 
 .title h1 {
-    font-size: 2.5rem;
-    font-weight: 300;
-    line-height: 3rem;
+    font-size: 3.25rem;
+    font-weight: var(--title-weight, 300);
+    font-variation-settings: 'wght' var(--title-weight, 300);
+    line-height: 4rem;
     color: #344054;
     text-decoration: none;
-    letter-spacing: -0.6px;
+    letter-spacing: -2px;
 }
 
 .first_line .gradient_title {
@@ -65,10 +69,19 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    font-weight: 600;
-    font-size: 2.5rem;
-    line-height: 3rem;
-    letter-spacing: -1px;
+    font-weight: var(--title-weight, 300);
+    font-variation-settings: 'wght' var(--title-weight, 300);
+    /* font-weight: var(--title-weight-inverse, 500);
+    font-variation-settings: 'wght' var(--title-weight-inverse, 500); */
+    font-size: 3.25rem;
+    line-height: 4rem;
+    letter-spacing: -1.5px;
+}
+
+.title_char {
+    /* inline-block so each letter can carry its own transform and lift */
+    display: inline-block;
+    will-change: font-variation-settings, transform;
 }
 
 .title,
@@ -101,4 +114,47 @@
 
 .subtitle_container a {
     text-decoration: none;
+}
+
+.scroll_cue {
+    /* pinned to the bottom of the hero so the title block stays vertically centred */
+    position: absolute;
+    bottom: 0;
+    left: 0.5rem;
+    display: flex;
+    align-items: center;
+    color: #667085;
+    /* fade lives on the wrapper so it does not fight the bob keyframes below */
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.scroll_cue.is_hidden {
+    opacity: 0;
+    transform: translateY(8px);
+    pointer-events: none;
+}
+
+.scroll_cue svg {
+    animation: scroll_cue_bob 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes scroll_cue_bob {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.2;
+    }
+
+    50% {
+        transform: translateY(10px);
+        opacity: 0.6;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scroll_cue svg {
+        animation: none;
+        opacity: 0.7;
+    }
 }
