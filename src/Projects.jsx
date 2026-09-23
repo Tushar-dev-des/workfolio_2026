@@ -232,11 +232,9 @@ const Projects = () => {
                         <div className="highlight"></div>
                         {/* <h1 style={{ fontWeight: "200", lineHeight: "1", marginLeft: "1.25rem" }}>01</h1> */}
                         <div className="desc" style={{ borderBottom: "1px solid #11111010", padding: "2rem 0" }}>
-                            <h3>DICE P2P(procure-to-pay) & AP(accounts payable) : <br /> <span style={{ fontWeight: "300" }}>Business travel experience, but a seamless one.</span></h3>
+                            <h3>DICE P2P(procure-to-pay) & AP(accounts payable) : <br /> <span style={{ fontWeight: "300" }}>a unified platform for purchasing and payments, effectively all procurement</span></h3>
                         </div>
-                        <div className="desc">
-                            <h3 >P2P & AP<br /> <span style={{ fontWeight: "300", color: "#344054" }}>for the enterprises</span></h3>
-                        </div>
+                      
                         <div className="desc">
                             
                             <h3 ><span style={{ fontWeight: "300", color: "#344054" }}>work in progress...</span></h3>
@@ -342,6 +340,7 @@ const Projects = () => {
                 </div>
                 <div className="project" style={{ height: "9.5rem", background: "#fdf9f6", marginTop: "-4rem", border: "1px solid #11111010" }}>
                     <div style={{ backgroundColor: "#11111004", gridColumn: "1 / span 3", marginRight: "-2.5rem", borderRight: "1px solid #11111010" }}></div>
+                    <div style={{ gridColumn: "4 / span 9", borderRight: "1px solid #11111010", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1.5rem", fontWeight: "300", color: "#34405440", fontStyle: "italic" }}> Still curating this space, please excuse any <span style={{ color: "#34405480" }}>&nbsp;rough edges...</span></div>
 
                 </div>
 
