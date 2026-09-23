@@ -121,6 +121,14 @@
     z-index: -1;
 }
 
+.p0 .project_content .thumbnail {
+    /* border: 1px solid #00000010; */
+    /* border: 1px solid #f3bdd1; */
+    background: url("./assets/p2p.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
 .p2 .project_content .thumbnail {
     /* border: 1px solid #00000010; */
     /* border: 1px solid #f3bdd1; */

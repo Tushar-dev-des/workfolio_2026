@@ -12,6 +12,19 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const Projects = () => {
     useGSAP(() => {
+        gsap.from('.p0 .project_content .thumbnail', {
+            scrollTrigger: {
+                trigger: ".p0",
+                start: "top 90%",
+                end: "top 50%",
+                scrub: true,
+            },
+            scale: 0.92,
+            filter: "blur(12px)",
+            opacity: 0.7,
+            transformOrigin: "bottom right",
+
+        })
         gsap.from('.p1 .project_content .thumbnail', {
             scrollTrigger: {
                 trigger: ".p1",
@@ -64,6 +77,16 @@ const Projects = () => {
             transformOrigin: "bottom right",
             // borderRadius: "100% 0 0 0",
 
+        })
+        gsap.from('.p0 .index_0', {
+            scrollTrigger: {
+                trigger: ".p0",
+                start: "top 70%",
+                end: "top 30%",
+                scrub: true,
+            },
+            filter: "blur(12px)",
+            opacity: 0,
         })
         gsap.from('.p1 .index_1', {
             scrollTrigger: {
@@ -204,6 +227,27 @@ const Projects = () => {
     return (
         <div className='projects_container'>
             <div className="projects">
+                <div className="project p0">
+                    <div className="index_container index_0">
+                        <div className="highlight"></div>
+                        {/* <h1 style={{ fontWeight: "200", lineHeight: "1", marginLeft: "1.25rem" }}>01</h1> */}
+                        <div className="desc" style={{ borderBottom: "1px solid #11111010", padding: "2rem 0" }}>
+                            <h3>DICE P2P(procure-to-pay) & AP(accounts payable) : <br /> <span style={{ fontWeight: "300" }}>Business travel experience, but a seamless one.</span></h3>
+                        </div>
+                        <div className="desc">
+                            <h3 >P2P & AP<br /> <span style={{ fontWeight: "300", color: "#344054" }}>for the enterprises</span></h3>
+                        </div>
+                        <div className="desc">
+                            
+                            <h3 ><span style={{ fontWeight: "300", color: "#344054" }}>work in progress...</span></h3>
+                        </div>
+                    </div>
+                    <Link to="/" className="project_content" >
+                        <div className="thumbnail">
+                            {/* <video src={project_zero_video} autoPlay loop playsInline muted className="project_zero_video"></video> */}
+                        </div>
+                    </Link>
+                </div>
                 <div className="project p1">
                     <div className="index_container index_1">
                         <div className="highlight"></div>
@@ -240,8 +284,12 @@ const Projects = () => {
                         <div className="desc">
                             <h3 ><span style={{ fontWeight: "300", color: "#344054" }}>&quot; Atlas is an AI experience across the Dice suite, for the complex world of enterprise finances, <br /> that bridges the gap between information, insight, and action. &quot;</span></h3>
                         </div>
+                        <div className="desc">
+                            
+                            <h3 ><span style={{ fontWeight: "300", color: "#344054" }}>work in progress...</span></h3>
+                        </div>
                     </div>
-                    <Link to="/projects/2" className="project_content" >
+                    <Link to="/" className="project_content" >
                         <div className="thumbnail">
                         </div>
 
