@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all"
 
 import project_one_video from "./assets/project_one.mp4"
+import atlas_video from "./assets/atlas_3.webm"
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -277,7 +278,7 @@ const Projects = () => {
                         <div className="highlight"></div>
                         {/* <h1 style={{ fontWeight: "200", lineHeight: "1", marginLeft: "1.25rem" }}>02</h1> */}
                         <div className="desc" style={{ borderBottom: "1px solid #11111010", padding: "2rem 0" }}>
-                            <h3>Designing <span className='atlas_ai'>Atlas</span>  : <br /> <span style={{ fontWeight: "300" }}>an AI beyond the usual copilots; for the enterprises</span></h3>
+                            <h3>Designing Dice <span className='atlas_ai'>Atlas</span>  : <br /> <span style={{ fontWeight: "300" }}>beyond the usual copilots; for the enterprises</span></h3>
                         </div>
                         <div className="desc">
                             <h3 ><span style={{ fontWeight: "300", color: "#344054" }}>&quot; Atlas is an AI experience across the Dice suite, for the complex world of enterprise finances, <br /> that bridges the gap between information, insight, and action. &quot;</span></h3>
@@ -289,6 +290,7 @@ const Projects = () => {
                     </div>
                     <Link to="/" className="project_content" >
                         <div className="thumbnail" data-cursor="pointer" data-cursor-label="in progress...">
+                        <video src={atlas_video} autoPlay loop playsInline muted className="project_one_video"></video>
                         </div>
 
                     </Link>
