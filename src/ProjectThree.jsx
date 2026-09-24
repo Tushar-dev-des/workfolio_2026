@@ -7,7 +7,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText, ScrollTrigger } from "gsap/all";
 import { INTRO_PLAYED_KEY } from './introFlag'
-import cleartripAssured1 from './assets/cleartrip_assured_1.webp';
+import cleartripAssured1 from './assets/cleartrip_assured_0.webp';
 import cleartripAssured2 from './assets/cleartrip_assured_2.webp';
 import cleartripAssured3 from './assets/cleartrip_assured_3.webp';
 
