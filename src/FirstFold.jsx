@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react'
+import gsap from 'gsap'
 import dice_logo from './assets/logo_dice.svg'
 import zaggle_logo from './assets/zaggle_logo.svg'
 import './FirstFold.css'
@@ -7,15 +8,28 @@ import { Link } from 'react-router-dom'
 const MIN_WEIGHT = 100
 const MAX_WEIGHT = 900
 
-// how far the cursor's pull reaches, and how much it adds on top of the base weight
-const RIPPLE_RADIUS = 170
-const RIPPLE_BOOST = 340
-const RIPPLE_LIFT = 10
+// how far the cursor's pull reaches, how far a letter rises at the centre of it, and how
+// much weight the pressure adds there
+const RIPPLE_RADIUS = 150
+const RIPPLE_LIFT = 12
+const RIPPLE_BOOST = 400
+
+// the resting weight of the .title lines — must match `font-weight` on `.title h1`, since
+// the pressure is measured up from it
+const TITLE_WEIGHT = 300
+
+// with the cursor still, the gradient title breathes: how long the stillness must last,
+// how long one full breath takes, and how much weight it swells by
+const IDLE_DELAY = 1100
+const BREATH_PERIOD = 8000
+const BREATH_DEPTH = 400
 
 const SCROLL_CUE_THRESHOLD = 40
 
-// Splits a string into per-character spans so each letter can be weighted on its own.
-// Spaces stay as bare text nodes: they have no glyph to weight, and leaving them out
+const FULL_NAME = 'tushar mahajan'
+
+// Splits a string into per-character spans so each letter can be lifted on its own.
+// Spaces stay as bare text nodes: they have no glyph to lift, and leaving them out
 // of the inline-block run keeps normal word wrapping intact on narrow windows.
 const splitChars = (text) =>
     Array.from(text).map((character, index) =>
@@ -27,6 +41,89 @@ const splitChars = (text) =>
 function FirstFold() {
     const foldRef = useRef(null)
     const cueRef = useRef(null)
+    const logoRef = useRef(null)
+
+    useEffect(() => {
+        const logo = logoRef.current
+        if (!logo) return
+
+        const short = logo.querySelector('.logo_short')
+        const letters = Array.from(logo.querySelectorAll('.logo_letter'))
+        if (!short || letters.length === 0) return
+
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        const targets = [short, ...letters]
+
+        // The two layers only stay clear of each other if the leaving edge exactly meets the
+        // arriving edge at every instant, and that holds only when both move on identical
+        // timing. Any difference in duration or ease makes them overlap mid-flight.
+        const DURATION = 0.5
+        const EASE = 'power3.inOut'
+        const STAGGER = 0.02
+
+        // On the way out 'tm.' has to wait for the letters it physically sits behind. Only the
+        // few letters within its horizontal span can collide; the rest are further right and
+        // never could, so the delay is measured rather than assuming the whole word.
+        let exitDelay = 0
+        const measureExitDelay = () => {
+            const shortRight = short.getBoundingClientRect().right
+            const collisions = letters.filter((letter) => letter.getBoundingClientRect().left < shortRight)
+            exitDelay = Math.max(0, collisions.length - 1) * STAGGER
+        }
+
+        measureExitDelay()
+        if (document.fonts?.ready) document.fonts.ready.then(measureExitDelay).catch(() => { })
+
+        // The name waits just below the mask; nothing is ever animated downwards.
+        gsap.set(letters, { yPercent: 100 })
+
+        const roll = (reveal) => {
+            gsap.killTweensOf(targets)
+
+            if (reduceMotion) {
+                gsap.set(short, { yPercent: reveal ? -100 : 0 })
+                gsap.set(letters, { yPercent: reveal ? 0 : 100 })
+                return
+            }
+
+            if (reveal) {
+                // 'tm.' is pushed up out of the top; the name rises into the space it leaves.
+                // Parking it below on completion is what lets the exit below also travel upward.
+                gsap.to(short, {
+                    yPercent: -100, duration: DURATION, ease: EASE,
+                    onComplete: () => gsap.set(short, { yPercent: 100 }),
+                })
+                gsap.to(letters, { yPercent: 0, duration: DURATION, ease: EASE, stagger: STAGGER })
+                return
+            }
+
+            // Leaving keeps the same upward direction: the name exits through the top while
+            // 'tm.' comes back around from underneath, trailing the letters it sits behind.
+            gsap.to(letters, {
+                yPercent: -100, duration: DURATION, ease: EASE, stagger: STAGGER,
+                onComplete: () => gsap.set(letters, { yPercent: 100 }),
+            })
+            gsap.to(short, { yPercent: 0, duration: DURATION, ease: EASE, delay: exitDelay })
+        }
+
+        // `gsap.to` from wherever the letters currently are, rather than a hard fromTo start,
+        // so re-entering mid-exit picks up the motion instead of snapping.
+        const enter = () => roll(true)
+        const leave = () => roll(false)
+
+        logo.addEventListener('pointerenter', enter)
+        logo.addEventListener('pointerleave', leave)
+        logo.addEventListener('focus', enter)
+        logo.addEventListener('blur', leave)
+
+        return () => {
+            logo.removeEventListener('pointerenter', enter)
+            logo.removeEventListener('pointerleave', leave)
+            logo.removeEventListener('focus', enter)
+            logo.removeEventListener('blur', leave)
+            gsap.killTweensOf(targets)
+        }
+    }, [])
 
     useEffect(() => {
         const cue = cueRef.current
@@ -50,18 +147,28 @@ function FirstFold() {
         const chars = Array.from(node.querySelectorAll('.title_char'))
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-        // start centred so the title has a sane weight before the first pointer move
+        // Cursor X drives `--title-weight`, which only `.gradient_title` consumes. The
+        // `.title` lines hold a fixed resting weight and instead gain weight locally, from
+        // the cursor's pressure within RIPPLE_RADIUS.
         let target = (MIN_WEIGHT + MAX_WEIGHT) / 2
         let current = target
-        let pointerX = window.innerWidth / 2
-        let pointerY = window.innerHeight / 2
+        let pointerX = 0
+        let pointerY = 0
         let hasPointer = false
         let pendingMove = false
         let frame = null
 
-        // Character centres are cached rather than read every frame: measuring all of
-        // them forces a reflow, and the weights themselves change the layout. We
-        // re-measure whenever something structural moves, and again once the ease settles.
+        let breathing = false
+        let breathBase = target
+        let breathStart = 0
+        let idleTimer = null
+        let rippleActive = false
+        let breathFrames = 0
+
+        // Centres are cached rather than read every frame, since measuring every letter
+        // forces a reflow. They go stale in two ways: the pressure changes letter widths,
+        // and the gradient title shares a flex row with 'with over 3+ YoE' so its own
+        // changing width shifts those letters sideways. Hence the re-measure once settled.
         let metrics = []
         const measure = () => {
             metrics = chars.map((el) => {
@@ -71,6 +178,7 @@ function FirstFold() {
         }
 
         const paint = () => {
+            rippleActive = false
             node.style.setProperty('--title-weight', current.toFixed(1))
             node.style.setProperty('--title-weight-inverse', (MIN_WEIGHT + MAX_WEIGHT - current).toFixed(1))
 
@@ -86,14 +194,32 @@ function FirstFold() {
                     }
                 }
 
-                const weight = Math.min(current + influence * RIPPLE_BOOST, MAX_WEIGHT)
+                if (!influence) {
+                    el.style.transform = ''
+                    el.style.fontVariationSettings = ''
+                    continue
+                }
+
+                rippleActive = true
+
+                const weight = Math.min(TITLE_WEIGHT + influence * RIPPLE_BOOST, MAX_WEIGHT)
                 el.style.fontVariationSettings = `'wght' ${weight.toFixed(1)}`
-                el.style.transform = influence ? `translateY(${(-influence * RIPPLE_LIFT).toFixed(2)}px)` : ''
+                el.style.transform = `translateY(${(-influence * RIPPLE_LIFT).toFixed(2)}px)`
             }
         }
 
         const tick = () => {
-            // ease toward the pointer so the weight glides instead of snapping
+            if (breathing) {
+                const elapsed = performance.now() - breathStart
+                // raised cosine: leaves the resting weight gently, swells, and returns
+                const phase = (1 - Math.cos((elapsed / BREATH_PERIOD) * Math.PI * 2)) / 2
+                // always swell towards the middle of the range, never past an end of the
+                // axis — otherwise a breath that starts near 100 or 900 would clip flat
+                const inward = breathBase < (MIN_WEIGHT + MAX_WEIGHT) / 2 ? 1 : -1
+                target = breathBase + inward * BREATH_DEPTH * phase
+            }
+
+            // ease toward the pointer so the gradient weight glides instead of snapping
             current += (target - current) * 0.12
             const settled = Math.abs(target - current) <= 0.1
             if (settled) current = target
@@ -102,6 +228,16 @@ function FirstFold() {
             pendingMove = false
             paint()
 
+            if (breathing) {
+                // The breath changes the gradient title's width, which nudges the letters
+                // sharing its flex row. Only worth re-measuring while a ripple is actually
+                // on those letters, and then only occasionally — this runs while idle.
+                breathFrames += 1
+                if (rippleActive && breathFrames % 10 === 0) measure()
+                frame = requestAnimationFrame(tick)
+                return
+            }
+
             if (settled && !hadPendingMove) {
                 frame = null
                 measure() // layout has stopped shifting, so centres are trustworthy again
@@ -109,6 +245,21 @@ function FirstFold() {
             }
 
             frame = requestAnimationFrame(tick)
+        }
+
+        const startBreathing = () => {
+            if (reduceMotion) return
+            breathing = true
+            breathBase = target
+            breathStart = performance.now()
+            breathFrames = 0
+            requestFrame()
+        }
+
+        const restartIdleTimer = () => {
+            breathing = false
+            window.clearTimeout(idleTimer)
+            idleTimer = window.setTimeout(startBreathing, IDLE_DELAY)
         }
 
         const requestFrame = () => {
@@ -123,6 +274,9 @@ function FirstFold() {
 
             const ratio = Math.min(Math.max(event.clientX / window.innerWidth, 0), 1)
             target = MIN_WEIGHT + ratio * (MAX_WEIGHT - MIN_WEIGHT)
+
+            // the cursor takes over again, and the breath is re-armed behind it
+            restartIdleTimer()
 
             if (reduceMotion) {
                 current = target
@@ -149,6 +303,7 @@ function FirstFold() {
 
         measure()
         paint()
+        restartIdleTimer() // breathe on load too, without waiting for a first pointer move
 
         // webfont swap changes every glyph's width, so re-measure once Geist is in
         if (document.fonts?.ready) document.fonts.ready.then(measure).catch(() => { })
@@ -163,6 +318,7 @@ function FirstFold() {
             window.removeEventListener('pointerleave', handleLeave)
             window.removeEventListener('resize', handleLayoutChange)
             window.removeEventListener('scroll', handleLayoutChange)
+            window.clearTimeout(idleTimer)
             if (frame !== null) cancelAnimationFrame(frame)
         }
     }, [])
@@ -171,7 +327,19 @@ function FirstFold() {
         <>
             <div className="first_fold" ref={foldRef}>
                 <div className="content">
-                    <Link to='/' className='name_logo_container'><p>tm.</p></Link>
+                    <Link to='/' className='name_logo_container' ref={logoRef} aria-label="Tushar Mahajan">
+                        <p>
+                            <span className="logo_short">tm.</span>
+                            {/* parked below the mask until hover, then rolled up letter by letter */}
+                            <span className="logo_full" aria-hidden="true">
+                                {Array.from(FULL_NAME).map((character, index) => (
+                                    <span className="logo_letter" key={index}>
+                                        {character === ' ' ? '\u00A0' : character}
+                                    </span>
+                                ))}
+                            </span>
+                        </p>
+                    </Link>
                     <div className='hero_container'>
                         <div className='title_container'>
                             <div className="first_line">

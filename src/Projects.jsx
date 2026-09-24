@@ -237,11 +237,11 @@ const Projects = () => {
                       
                         <div className="desc">
                             
-                            <h3 ><span style={{ fontWeight: "300", color: "#344054" }}>work in progress...</span></h3>
+                            <h3 ><span style={{ fontWeight: "300", color: "#344054" }}>project details coming soon...</span></h3>
                         </div>
                     </div>
                     <Link to="/" className="project_content" >
-                        <div className="thumbnail">
+                        <div className="thumbnail" data-cursor-label="in progress...">
                             {/* <video src={project_zero_video} autoPlay loop playsInline muted className="project_zero_video"></video> */}
                         </div>
                     </Link>
@@ -267,7 +267,7 @@ const Projects = () => {
                         </div>
                     </div>
                     <Link to="/projects/1" className="project_content" >
-                        <div className="thumbnail">
+                        <div className="thumbnail" data-cursor-label="Have a look">
                             <video src={project_one_video} autoPlay loop playsInline muted className="project_one_video"></video>
                         </div>
                     </Link>
@@ -284,11 +284,11 @@ const Projects = () => {
                         </div>
                         <div className="desc">
                             
-                            <h3 ><span style={{ fontWeight: "300", color: "#344054" }}>work in progress...</span></h3>
+                            <h3 ><span style={{ fontWeight: "300", color: "#344054" }}>project details coming soon..</span></h3>
                         </div>
                     </div>
                     <Link to="/" className="project_content" >
-                        <div className="thumbnail">
+                        <div className="thumbnail" data-cursor-label="in progress...">
                         </div>
 
                     </Link>
@@ -311,7 +311,7 @@ const Projects = () => {
                         </div>
                     </div>
                     <Link to="/projects/3" className="project_content">
-                        <div className="thumbnail">
+                        <div className="thumbnail" data-cursor-label="Check it out">
                         </div>
 
                     </Link>
@@ -334,7 +334,7 @@ const Projects = () => {
                         </div>
                     </div>
                     <Link to="/projects/4" className="project_content" >
-                        <div className="thumbnail">
+                        <div className="thumbnail" data-cursor-label="See the work">
                         </div>
                     </Link>
                 </div>

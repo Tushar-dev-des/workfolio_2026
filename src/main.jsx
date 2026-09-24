@@ -9,6 +9,7 @@ import FallbackProject from './FallbackProject.jsx'
 import 'lenis/dist/lenis.css'
 import { ReactLenis, useLenis } from 'lenis/react'
 import Footer from './Footer.jsx'
+import CustomCursor from './CustomCursor.jsx'
 import { createBrowserRouter, RouterProvider, Outlet, ScrollRestoration } from 'react-router-dom'
 
 const Root = () => {
@@ -20,6 +21,7 @@ const Root = () => {
   return (
     <>
       <ReactLenis root options={{ lerp: 0.07, wheelMultiplier: 0.4 }} />
+      <CustomCursor />
       <ScrollRestoration />
       <Outlet />
       <Footer />

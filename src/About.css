@@ -36,7 +36,50 @@
     z-index: -1;
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
+    /* anchors the absolutely positioned icon layer below */
+    position: relative;
 }
+
+/* Lives inside .puzzle_container so it inherits that element's existing ScrollTrigger
+   pin — it stays on screen for the whole 500vh section without adding another pin. */
+.float_layer {
+    position: absolute;
+    inset: 0;
+    grid-column: 1 / -1;
+    pointer-events: none;
+    color: #667085;
+    overflow: visible;
+    /* Groups every icon into one stacking context at level 0. `.puzzle` has opacity < 1,
+       so it also paints at level 0 but later in DOM order, which keeps the icons behind
+       the puzzle pieces. Stated explicitly so a stray z-index on one icon cannot pop it
+       out in front of the puzzle. */
+    z-index: 0;
+}
+
+/* .float_item {
+    position: absolute;
+    will-change: transform;
+}
+
+.float_drifter {
+    animation: float_drift 7s ease-in-out infinite alternate;
+}
+
+@keyframes float_drift {
+    from {
+        transform: translateY(-7px);
+    }
+
+    to {
+        transform: translateY(7px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .float_drifter {
+        animation: none;
+    } */
+
 
 .puzzle {
     grid-column: 4/span 6;

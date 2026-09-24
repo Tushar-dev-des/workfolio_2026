@@ -1,0 +1,60 @@
+.custom_cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 1.75rem;
+    height: 1.75rem;
+    pointer-events: none;
+    z-index: 2147483647;
+    opacity: 0;
+    transition: opacity 0.18s ease;
+    will-change: transform;
+}
+
+.custom_cursor_arrow {
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* the arrow stays in front, so where the pill tucks under it the overlap reads as
+       depth rather than as the label clipping the cursor */
+    position: relative;
+    z-index: 1;
+}
+
+/* Anchored as a share of the arrow box rather than in pixels, so the pill keeps the
+   placement from the reference at any cursor size. The text stays a fixed readable size. */
+.custom_cursor_label {
+    position: absolute;
+    left: 44%;
+    top: 78%;
+    white-space: nowrap;
+    background: #333333;
+    color: #ffffff;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    line-height: 1;
+    padding: 0.5rem 0.9rem;
+    border-radius: 999px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+    opacity: 0;
+    transform: scale(0.7);
+    transform-origin: 0 0;
+    transition: opacity 0.16s ease, transform 0.32s cubic-bezier(0.2, 1.5, 0.4, 1);
+}
+
+.custom_cursor.is_visible {
+    opacity: 1;
+}
+
+.custom_cursor.is_labelled .custom_cursor_label {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* `!important` is needed to beat the inline `cursor: pointer` styles set on some elements.
+   Applied via a class the component adds, so the native cursor survives if JS never runs. */
+.has_custom_cursor,
+.has_custom_cursor * {
+    cursor: none !important;
+}
