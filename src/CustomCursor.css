@@ -11,14 +11,26 @@
     will-change: transform;
 }
 
-.custom_cursor_arrow {
+.custom_cursor_arrow,
+.custom_cursor_hand {
     display: block;
     width: 100%;
     height: 100%;
-    /* the arrow stays in front, so where the pill tucks under it the overlap reads as
+    /* the graphic stays in front, so where the pill tucks under it the overlap reads as
        depth rather than as the label clipping the cursor */
     position: relative;
     z-index: 1;
+}
+
+/* Both graphics stay mounted and are swapped by class — no `src` change, so no flash
+   the first time the pointer variant is needed. */
+.custom_cursor_hand,
+.custom_cursor.is_pointer .custom_cursor_arrow {
+    display: none;
+}
+
+.custom_cursor.is_pointer .custom_cursor_hand {
+    display: block;
 }
 
 /* Anchored as a share of the arrow box rather than in pixels, so the pill keeps the
