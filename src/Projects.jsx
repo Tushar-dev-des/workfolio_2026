@@ -5,7 +5,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all"
 
 import project_one_video from "./assets/project_one.mp4"
-import atlas_video from "./assets/atlas_4.webm"
+import atlas_video from "./assets/aurora.webm"
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 

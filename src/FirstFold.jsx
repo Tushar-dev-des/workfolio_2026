@@ -18,12 +18,6 @@ const RIPPLE_BOOST = 400
 // the pressure is measured up from it
 const TITLE_WEIGHT = 300
 
-// with the cursor still, the gradient title breathes: how long the stillness must last,
-// how long one full breath takes, and how much weight it swells by
-const IDLE_DELAY = 1100
-const BREATH_PERIOD = 8000
-const BREATH_DEPTH = 400
-
 const SCROLL_CUE_THRESHOLD = 40
 
 const FULL_NAME = 'tushar mahajan'
@@ -158,13 +152,6 @@ function FirstFold() {
         let pendingMove = false
         let frame = null
 
-        let breathing = false
-        let breathBase = target
-        let breathStart = 0
-        let idleTimer = null
-        let rippleActive = false
-        let breathFrames = 0
-
         // Centres are cached rather than read every frame, since measuring every letter
         // forces a reflow. They go stale in two ways: the pressure changes letter widths,
         // and the gradient title shares a flex row with 'with over 3+ YoE' so its own
@@ -178,7 +165,6 @@ function FirstFold() {
         }
 
         const paint = () => {
-            rippleActive = false
             node.style.setProperty('--title-weight', current.toFixed(1))
             node.style.setProperty('--title-weight-inverse', (MIN_WEIGHT + MAX_WEIGHT - current).toFixed(1))
 
@@ -200,8 +186,6 @@ function FirstFold() {
                     continue
                 }
 
-                rippleActive = true
-
                 const weight = Math.min(TITLE_WEIGHT + influence * RIPPLE_BOOST, MAX_WEIGHT)
                 el.style.fontVariationSettings = `'wght' ${weight.toFixed(1)}`
                 el.style.transform = `translateY(${(-influence * RIPPLE_LIFT).toFixed(2)}px)`
@@ -209,16 +193,6 @@ function FirstFold() {
         }
 
         const tick = () => {
-            if (breathing) {
-                const elapsed = performance.now() - breathStart
-                // raised cosine: leaves the resting weight gently, swells, and returns
-                const phase = (1 - Math.cos((elapsed / BREATH_PERIOD) * Math.PI * 2)) / 2
-                // always swell towards the middle of the range, never past an end of the
-                // axis — otherwise a breath that starts near 100 or 900 would clip flat
-                const inward = breathBase < (MIN_WEIGHT + MAX_WEIGHT) / 2 ? 1 : -1
-                target = breathBase + inward * BREATH_DEPTH * phase
-            }
-
             // ease toward the pointer so the gradient weight glides instead of snapping
             current += (target - current) * 0.12
             const settled = Math.abs(target - current) <= 0.1
@@ -228,16 +202,6 @@ function FirstFold() {
             pendingMove = false
             paint()
 
-            if (breathing) {
-                // The breath changes the gradient title's width, which nudges the letters
-                // sharing its flex row. Only worth re-measuring while a ripple is actually
-                // on those letters, and then only occasionally — this runs while idle.
-                breathFrames += 1
-                if (rippleActive && breathFrames % 10 === 0) measure()
-                frame = requestAnimationFrame(tick)
-                return
-            }
-
             if (settled && !hadPendingMove) {
                 frame = null
                 measure() // layout has stopped shifting, so centres are trustworthy again
@@ -245,21 +209,6 @@ function FirstFold() {
             }
 
             frame = requestAnimationFrame(tick)
-        }
-
-        const startBreathing = () => {
-            if (reduceMotion) return
-            breathing = true
-            breathBase = target
-            breathStart = performance.now()
-            breathFrames = 0
-            requestFrame()
-        }
-
-        const restartIdleTimer = () => {
-            breathing = false
-            window.clearTimeout(idleTimer)
-            idleTimer = window.setTimeout(startBreathing, IDLE_DELAY)
         }
 
         const requestFrame = () => {
@@ -274,9 +223,6 @@ function FirstFold() {
 
             const ratio = Math.min(Math.max(event.clientX / window.innerWidth, 0), 1)
             target = MIN_WEIGHT + ratio * (MAX_WEIGHT - MIN_WEIGHT)
-
-            // the cursor takes over again, and the breath is re-armed behind it
-            restartIdleTimer()
 
             if (reduceMotion) {
                 current = target
@@ -303,7 +249,6 @@ function FirstFold() {
 
         measure()
         paint()
-        restartIdleTimer() // breathe on load too, without waiting for a first pointer move
 
         // webfont swap changes every glyph's width, so re-measure once Geist is in
         if (document.fonts?.ready) document.fonts.ready.then(measure).catch(() => { })
@@ -318,7 +263,6 @@ function FirstFold() {
             window.removeEventListener('pointerleave', handleLeave)
             window.removeEventListener('resize', handleLayoutChange)
             window.removeEventListener('scroll', handleLayoutChange)
-            window.clearTimeout(idleTimer)
             if (frame !== null) cancelAnimationFrame(frame)
         }
     }, [])
