@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react'
-import gsap from 'gsap'
 import dice_logo from './assets/logo_dice.svg'
 import zaggle_logo from './assets/zaggle_logo.svg'
 import './FirstFold.css'
@@ -20,8 +19,6 @@ const TITLE_WEIGHT = 300
 
 const SCROLL_CUE_THRESHOLD = 40
 
-const FULL_NAME = 'tushar mahajan'
-
 // Splits a string into per-character spans so each letter can be lifted on its own.
 // Spaces stay as bare text nodes: they have no glyph to lift, and leaving them out
 // of the inline-block run keeps normal word wrapping intact on narrow windows.
@@ -35,89 +32,6 @@ const splitChars = (text) =>
 function FirstFold() {
     const foldRef = useRef(null)
     const cueRef = useRef(null)
-    const logoRef = useRef(null)
-
-    useEffect(() => {
-        const logo = logoRef.current
-        if (!logo) return
-
-        const short = logo.querySelector('.logo_short')
-        const letters = Array.from(logo.querySelectorAll('.logo_letter'))
-        if (!short || letters.length === 0) return
-
-        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-        const targets = [short, ...letters]
-
-        // The two layers only stay clear of each other if the leaving edge exactly meets the
-        // arriving edge at every instant, and that holds only when both move on identical
-        // timing. Any difference in duration or ease makes them overlap mid-flight.
-        const DURATION = 0.5
-        const EASE = 'power3.inOut'
-        const STAGGER = 0.02
-
-        // On the way out 'tm.' has to wait for the letters it physically sits behind. Only the
-        // few letters within its horizontal span can collide; the rest are further right and
-        // never could, so the delay is measured rather than assuming the whole word.
-        let exitDelay = 0
-        const measureExitDelay = () => {
-            const shortRight = short.getBoundingClientRect().right
-            const collisions = letters.filter((letter) => letter.getBoundingClientRect().left < shortRight)
-            exitDelay = Math.max(0, collisions.length - 1) * STAGGER
-        }
-
-        measureExitDelay()
-        if (document.fonts?.ready) document.fonts.ready.then(measureExitDelay).catch(() => { })
-
-        // The name waits just below the mask; nothing is ever animated downwards.
-        gsap.set(letters, { yPercent: 100 })
-
-        const roll = (reveal) => {
-            gsap.killTweensOf(targets)
-
-            if (reduceMotion) {
-                gsap.set(short, { yPercent: reveal ? -100 : 0 })
-                gsap.set(letters, { yPercent: reveal ? 0 : 100 })
-                return
-            }
-
-            if (reveal) {
-                // 'tm.' is pushed up out of the top; the name rises into the space it leaves.
-                // Parking it below on completion is what lets the exit below also travel upward.
-                gsap.to(short, {
-                    yPercent: -100, duration: DURATION, ease: EASE,
-                    onComplete: () => gsap.set(short, { yPercent: 100 }),
-                })
-                gsap.to(letters, { yPercent: 0, duration: DURATION, ease: EASE, stagger: STAGGER })
-                return
-            }
-
-            // Leaving keeps the same upward direction: the name exits through the top while
-            // 'tm.' comes back around from underneath, trailing the letters it sits behind.
-            gsap.to(letters, {
-                yPercent: -100, duration: DURATION, ease: EASE, stagger: STAGGER,
-                onComplete: () => gsap.set(letters, { yPercent: 100 }),
-            })
-            gsap.to(short, { yPercent: 0, duration: DURATION, ease: EASE, delay: exitDelay })
-        }
-
-        // `gsap.to` from wherever the letters currently are, rather than a hard fromTo start,
-        // so re-entering mid-exit picks up the motion instead of snapping.
-        const enter = () => roll(true)
-        const leave = () => roll(false)
-
-        logo.addEventListener('pointerenter', enter)
-        logo.addEventListener('pointerleave', leave)
-        logo.addEventListener('focus', enter)
-        logo.addEventListener('blur', leave)
-
-        return () => {
-            logo.removeEventListener('pointerenter', enter)
-            logo.removeEventListener('pointerleave', leave)
-            logo.removeEventListener('focus', enter)
-            logo.removeEventListener('blur', leave)
-            gsap.killTweensOf(targets)
-        }
-    }, [])
 
     useEffect(() => {
         const cue = cueRef.current
@@ -271,19 +185,7 @@ function FirstFold() {
         <>
             <div className="first_fold" ref={foldRef}>
                 <div className="content">
-                    <Link to='/' className='name_logo_container' ref={logoRef} aria-label="Tushar Mahajan">
-                        <p>
-                            <span className="logo_short">tm.</span>
-                            {/* parked below the mask until hover, then rolled up letter by letter */}
-                            <span className="logo_full" aria-hidden="true">
-                                {Array.from(FULL_NAME).map((character, index) => (
-                                    <span className="logo_letter" key={index}>
-                                        {character === ' ' ? '\u00A0' : character}
-                                    </span>
-                                ))}
-                            </span>
-                        </p>
-                    </Link>
+                    <Link to='/' className='name_logo_container'><p>tm.</p></Link>
                     <div className='hero_container'>
                         <div className='title_container'>
                             <div className="first_line">

@@ -20,10 +20,7 @@
 }
 
 .name_logo_container {
-    /* Vertical clip masks the roll; the horizontal axis must stay visible so the full name
-       can overflow to the right of the narrow 'tm.' box instead of being cut off. */
-    overflow-x: visible;
-    overflow-y: clip;
+    overflow: hidden;
     text-decoration: none;
 }
 
@@ -33,29 +30,8 @@
     color: #344054;
     line-height: 1.75rem;
     margin-left: 0.5rem;
-    /* fixed height gives the mask a line to clip against; relative anchors the name layer */
-    position: relative;
-    height: 1.75rem;
-    white-space: nowrap;
 }
 
-/* Two layers sharing one line box: 'tm.' sits in flow and sets the element's width,
-   the full name is taken out of flow so it can overflow to the right. */
-.logo_short {
-    display: inline-block;
-}
-
-.logo_full {
-    position: absolute;
-    left: 0;
-    top: 0;
-    white-space: nowrap;
-}
-
-.logo_letter {
-    display: inline-block;
-    will-change: transform;
-}
 
 
 .hero_container {
